@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AndTekAgent' target in the 'AndTekAgent' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

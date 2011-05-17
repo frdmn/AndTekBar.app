@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4856629A1382777200A4EEE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485662991382777200A4EEE2 /* Cocoa.framework */; };
+		485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485662A21382777200A4EEE2 /* InfoPlist.strings */; };
+		485662A71382777200A4EEE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662A61382777200A4EEE2 /* main.m */; };
+		485662AA1382777200A4EEE2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 485662A81382777200A4EEE2 /* Credits.rtf */; };
+		485662AD1382777200A4EEE2 /* AndTekAgentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662AC1382777200A4EEE2 /* AndTekAgentAppDelegate.m */; };
+		485662B01382777200A4EEE2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485662AE1382777200A4EEE2 /* MainMenu.xib */; };
+		485662B71382777200A4EEE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485662991382777200A4EEE2 /* Cocoa.framework */; };
+		485662BF1382777200A4EEE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485662BD1382777200A4EEE2 /* InfoPlist.strings */; };
+		485662C21382777200A4EEE2 /* AndTekAgentTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 485662C11382777200A4EEE2 /* AndTekAgentTests.h */; };
+		485662C41382777200A4EEE2 /* AndTekAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662C31382777200A4EEE2 /* AndTekAgentTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		485662B81382777200A4EEE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4856628C1382777200A4EEE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 485662941382777200A4EEE2;
+			remoteInfo = AndTekAgent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		485662951382777200A4EEE2 /* AndTekAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndTekAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		485662991382777200A4EEE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4856629C1382777200A4EEE2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4856629D1382777200A4EEE2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4856629E1382777200A4EEE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		485662A11382777200A4EEE2 /* AndTekAgent-Info.plist */ = {isa = PBXFileReference; path = "AndTekAgent-Info.plist"; sourceTree = "<group>"; };
+		485662A31382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		485662A51382777200A4EEE2 /* AndTekAgent-Prefix.pch */ = {isa = PBXFileReference; path = "AndTekAgent-Prefix.pch"; sourceTree = "<group>"; };
+		485662A61382777200A4EEE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		485662A91382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		485662AB1382777200A4EEE2 /* AndTekAgentAppDelegate.h */ = {isa = PBXFileReference; path = AndTekAgentAppDelegate.h; sourceTree = "<group>"; };
+		485662AC1382777200A4EEE2 /* AndTekAgentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekAgentAppDelegate.m; sourceTree = "<group>"; };
+		485662AF1382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		485662B61382777200A4EEE2 /* AndTekAgentTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndTekAgentTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		485662BC1382777200A4EEE2 /* AndTekAgentTests-Info.plist */ = {isa = PBXFileReference; path = "AndTekAgentTests-Info.plist"; sourceTree = "<group>"; };
+		485662BE1382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		485662C01382777200A4EEE2 /* AndTekAgentTests-Prefix.pch */ = {isa = PBXFileReference; path = "AndTekAgentTests-Prefix.pch"; sourceTree = "<group>"; };
+		485662C11382777200A4EEE2 /* AndTekAgentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndTekAgentTests.h; sourceTree = "<group>"; };
+		485662C31382777200A4EEE2 /* AndTekAgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekAgentTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		485662921382777200A4EEE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4856629A1382777200A4EEE2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		485662B21382777200A4EEE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485662B71382777200A4EEE2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4856628A1382777200A4EEE2 = {
+			isa = PBXGroup;
+			children = (
+				4856629F1382777200A4EEE2 /* AndTekAgent */,
+				485662BA1382777200A4EEE2 /* AndTekAgentTests */,
+				485662981382777200A4EEE2 /* Frameworks */,
+				485662961382777200A4EEE2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		485662961382777200A4EEE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				485662951382777200A4EEE2 /* AndTekAgent.app */,
+				485662B61382777200A4EEE2 /* AndTekAgentTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		485662981382777200A4EEE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				485662991382777200A4EEE2 /* Cocoa.framework */,
+				4856629B1382777200A4EEE2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4856629B1382777200A4EEE2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4856629C1382777200A4EEE2 /* AppKit.framework */,
+				4856629D1382777200A4EEE2 /* CoreData.framework */,
+				4856629E1382777200A4EEE2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4856629F1382777200A4EEE2 /* AndTekAgent */ = {
+			isa = PBXGroup;
+			children = (
+				485662AB1382777200A4EEE2 /* AndTekAgentAppDelegate.h */,
+				485662AC1382777200A4EEE2 /* AndTekAgentAppDelegate.m */,
+				485662AE1382777200A4EEE2 /* MainMenu.xib */,
+				485662A01382777200A4EEE2 /* Supporting Files */,
+			);
+			path = AndTekAgent;
+			sourceTree = "<group>";
+		};
+		485662A01382777200A4EEE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				485662A11382777200A4EEE2 /* AndTekAgent-Info.plist */,
+				485662A21382777200A4EEE2 /* InfoPlist.strings */,
+				485662A51382777200A4EEE2 /* AndTekAgent-Prefix.pch */,
+				485662A61382777200A4EEE2 /* main.m */,
+				485662A81382777200A4EEE2 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		485662BA1382777200A4EEE2 /* AndTekAgentTests */ = {
+			isa = PBXGroup;
+			children = (
+				485662C11382777200A4EEE2 /* AndTekAgentTests.h */,
+				485662C31382777200A4EEE2 /* AndTekAgentTests.m */,
+				485662BB1382777200A4EEE2 /* Supporting Files */,
+			);
+			path = AndTekAgentTests;
+			sourceTree = "<group>";
+		};
+		485662BB1382777200A4EEE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				485662BC1382777200A4EEE2 /* AndTekAgentTests-Info.plist */,
+				485662BD1382777200A4EEE2 /* InfoPlist.strings */,
+				485662C01382777200A4EEE2 /* AndTekAgentTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		485662941382777200A4EEE2 /* AndTekAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 485662C71382777200A4EEE2 /* Build configuration list for PBXNativeTarget "AndTekAgent" */;
+			buildPhases = (
+				485662911382777200A4EEE2 /* Sources */,
+				485662921382777200A4EEE2 /* Frameworks */,
+				485662931382777200A4EEE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AndTekAgent;
+			productName = AndTekAgent;
+			productReference = 485662951382777200A4EEE2 /* AndTekAgent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		485662B51382777200A4EEE2 /* AndTekAgentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 485662CA1382777200A4EEE2 /* Build configuration list for PBXNativeTarget "AndTekAgentTests" */;
+			buildPhases = (
+				485662B11382777200A4EEE2 /* Sources */,
+				485662B21382777200A4EEE2 /* Frameworks */,
+				485662B31382777200A4EEE2 /* Resources */,
+				485662B41382777200A4EEE2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				485662B91382777200A4EEE2 /* PBXTargetDependency */,
+			);
+			name = AndTekAgentTests;
+			productName = AndTekAgentTests;
+			productReference = 485662B61382777200A4EEE2 /* AndTekAgentTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4856628C1382777200A4EEE2 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4856628F1382777200A4EEE2 /* Build configuration list for PBXProject "AndTekAgent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4856628A1382777200A4EEE2;
+			productRefGroup = 485662961382777200A4EEE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				485662941382777200A4EEE2 /* AndTekAgent */,
+				485662B51382777200A4EEE2 /* AndTekAgentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		485662931382777200A4EEE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */,
+				485662AA1382777200A4EEE2 /* Credits.rtf in Resources */,
+				485662B01382777200A4EEE2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		485662B31382777200A4EEE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485662BF1382777200A4EEE2 /* InfoPlist.strings in Resources */,
+				485662C21382777200A4EEE2 /* AndTekAgentTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		485662B41382777200A4EEE2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		485662911382777200A4EEE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485662A71382777200A4EEE2 /* main.m in Sources */,
+				485662AD1382777200A4EEE2 /* AndTekAgentAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		485662B11382777200A4EEE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485662C41382777200A4EEE2 /* AndTekAgentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		485662B91382777200A4EEE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 485662941382777200A4EEE2 /* AndTekAgent */;
+			targetProxy = 485662B81382777200A4EEE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		485662A21382777200A4EEE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				485662A31382777200A4EEE2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		485662A81382777200A4EEE2 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				485662A91382777200A4EEE2 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		485662AE1382777200A4EEE2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				485662AF1382777200A4EEE2 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		485662BD1382777200A4EEE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				485662BE1382777200A4EEE2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		485662C51382777200A4EEE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		485662C61382777200A4EEE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		485662C81382777200A4EEE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AndTekAgent/AndTekAgent-Prefix.pch";
+				INFOPLIST_FILE = "AndTekAgent/AndTekAgent-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		485662C91382777200A4EEE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AndTekAgent/AndTekAgent-Prefix.pch";
+				INFOPLIST_FILE = "AndTekAgent/AndTekAgent-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		485662CB1382777200A4EEE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AndTekAgent.app/Contents/MacOS/AndTekAgent";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AndTekAgentTests/AndTekAgentTests-Prefix.pch";
+				INFOPLIST_FILE = "AndTekAgentTests/AndTekAgentTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		485662CC1382777200A4EEE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AndTekAgent.app/Contents/MacOS/AndTekAgent";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AndTekAgentTests/AndTekAgentTests-Prefix.pch";
+				INFOPLIST_FILE = "AndTekAgentTests/AndTekAgentTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4856628F1382777200A4EEE2 /* Build configuration list for PBXProject "AndTekAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				485662C51382777200A4EEE2 /* Debug */,
+				485662C61382777200A4EEE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		485662C71382777200A4EEE2 /* Build configuration list for PBXNativeTarget "AndTekAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				485662C81382777200A4EEE2 /* Debug */,
+				485662C91382777200A4EEE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		485662CA1382777200A4EEE2 /* Build configuration list for PBXNativeTarget "AndTekAgentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				485662CB1382777200A4EEE2 /* Debug */,
+				485662CC1382777200A4EEE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4856628C1382777200A4EEE2 /* Project object */;
+}
