@@ -17,6 +17,10 @@
 		485662BF1382777200A4EEE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485662BD1382777200A4EEE2 /* InfoPlist.strings */; };
 		485662C21382777200A4EEE2 /* AndTekAgentTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 485662C11382777200A4EEE2 /* AndTekAgentTests.h */; };
 		485662C41382777200A4EEE2 /* AndTekAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662C31382777200A4EEE2 /* AndTekAgentTests.m */; };
+		485662D613827A5800A4EEE2 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662D513827A5800A4EEE2 /* AppController.m */; };
+		48EF464B13827DD500CDEF3A /* iconon.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EF464913827DD500CDEF3A /* iconon.png */; };
+		48EF464C13827DD500CDEF3A /* iconoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EF464A13827DD500CDEF3A /* iconoff.png */; };
+		48EF464E13827DFB00CDEF3A /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EF464D13827DFB00CDEF3A /* logo3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +39,25 @@
 		4856629C1382777200A4EEE2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4856629D1382777200A4EEE2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4856629E1382777200A4EEE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		485662A11382777200A4EEE2 /* AndTekAgent-Info.plist */ = {isa = PBXFileReference; path = "AndTekAgent-Info.plist"; sourceTree = "<group>"; };
+		485662A11382777200A4EEE2 /* AndTekAgent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AndTekAgent-Info.plist"; sourceTree = "<group>"; };
 		485662A31382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		485662A51382777200A4EEE2 /* AndTekAgent-Prefix.pch */ = {isa = PBXFileReference; path = "AndTekAgent-Prefix.pch"; sourceTree = "<group>"; };
+		485662A51382777200A4EEE2 /* AndTekAgent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AndTekAgent-Prefix.pch"; sourceTree = "<group>"; };
 		485662A61382777200A4EEE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		485662A91382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		485662AB1382777200A4EEE2 /* AndTekAgentAppDelegate.h */ = {isa = PBXFileReference; path = AndTekAgentAppDelegate.h; sourceTree = "<group>"; };
+		485662AB1382777200A4EEE2 /* AndTekAgentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndTekAgentAppDelegate.h; sourceTree = "<group>"; };
 		485662AC1382777200A4EEE2 /* AndTekAgentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekAgentAppDelegate.m; sourceTree = "<group>"; };
 		485662AF1382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		485662B61382777200A4EEE2 /* AndTekAgentTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndTekAgentTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		485662BC1382777200A4EEE2 /* AndTekAgentTests-Info.plist */ = {isa = PBXFileReference; path = "AndTekAgentTests-Info.plist"; sourceTree = "<group>"; };
+		485662BC1382777200A4EEE2 /* AndTekAgentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AndTekAgentTests-Info.plist"; sourceTree = "<group>"; };
 		485662BE1382777200A4EEE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		485662C01382777200A4EEE2 /* AndTekAgentTests-Prefix.pch */ = {isa = PBXFileReference; path = "AndTekAgentTests-Prefix.pch"; sourceTree = "<group>"; };
+		485662C01382777200A4EEE2 /* AndTekAgentTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AndTekAgentTests-Prefix.pch"; sourceTree = "<group>"; };
 		485662C11382777200A4EEE2 /* AndTekAgentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndTekAgentTests.h; sourceTree = "<group>"; };
 		485662C31382777200A4EEE2 /* AndTekAgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekAgentTests.m; sourceTree = "<group>"; };
+		485662D413827A5800A4EEE2 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		485662D513827A5800A4EEE2 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		48EF464913827DD500CDEF3A /* iconon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconon.png; path = ../../../Desktop/iconon.png; sourceTree = "<group>"; };
+		48EF464A13827DD500CDEF3A /* iconoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconoff.png; path = ../../../Desktop/iconoff.png; sourceTree = "<group>"; };
+		48EF464D13827DFB00CDEF3A /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo3.png; path = ../logo3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +121,14 @@
 		4856629F1382777200A4EEE2 /* AndTekAgent */ = {
 			isa = PBXGroup;
 			children = (
+				48EF464D13827DFB00CDEF3A /* logo3.png */,
+				48EF464913827DD500CDEF3A /* iconon.png */,
+				48EF464A13827DD500CDEF3A /* iconoff.png */,
+				485662D413827A5800A4EEE2 /* AppController.h */,
+				485662D513827A5800A4EEE2 /* AppController.m */,
+				485662AE1382777200A4EEE2 /* MainMenu.xib */,
 				485662AB1382777200A4EEE2 /* AndTekAgentAppDelegate.h */,
 				485662AC1382777200A4EEE2 /* AndTekAgentAppDelegate.m */,
-				485662AE1382777200A4EEE2 /* MainMenu.xib */,
 				485662A01382777200A4EEE2 /* Supporting Files */,
 			);
 			path = AndTekAgent;
@@ -222,6 +236,9 @@
 				485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */,
 				485662AA1382777200A4EEE2 /* Credits.rtf in Resources */,
 				485662B01382777200A4EEE2 /* MainMenu.xib in Resources */,
+				48EF464B13827DD500CDEF3A /* iconon.png in Resources */,
+				48EF464C13827DD500CDEF3A /* iconoff.png in Resources */,
+				48EF464E13827DFB00CDEF3A /* logo3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +276,7 @@
 			files = (
 				485662A71382777200A4EEE2 /* main.m in Sources */,
 				485662AD1382777200A4EEE2 /* AndTekAgentAppDelegate.m in Sources */,
+				485662D613827A5800A4EEE2 /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +459,7 @@
 				485662C91382777200A4EEE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		485662CA1382777200A4EEE2 /* Build configuration list for PBXNativeTarget "AndTekAgentTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +468,7 @@
 				485662CC1382777200A4EEE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
