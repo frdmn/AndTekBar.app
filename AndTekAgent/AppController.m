@@ -8,8 +8,6 @@
 
 #import "AppController.h"
 
-static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDService";
-
 @interface AppController()
 - (void) sendRequestWithState: (NSString *) state;
 - (void) login: (NSNotification *) notification;
@@ -47,6 +45,8 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
+    
+    [self login: nil];
 }
 
 - (id) init
@@ -59,13 +59,16 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self selector: @selector(login:) name:  NSWorkspaceSessionDidBecomeActiveNotification object: nil];
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self selector: @selector(logoff:) name: NSWorkspaceSessionDidResignActiveNotification object: nil];
     }
-    
+        
     return self;
 }
 
 - (void) sendRequestWithState: (NSString *) state
 {
-	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: kServerURL]
+    
+    NSString * ServerURL = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
+
+	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: ServerURL]
 															  cachePolicy: NSURLRequestUseProtocolCachePolicy
 														  timeoutInterval: 20.0];
 	[theRequest setHTTPMethod: @"POST"];
@@ -74,18 +77,29 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
 	
 	NSURLResponse *response;
     [NSURLConnection sendSynchronousRequest: theRequest returningResponse: &response error:nil];
+        
+    NSLog(@"AndTekAgent | Version %@ (http://frd.mn/)", [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"]);
+    NSLog(@"AndTekAgent | -- Server-Socket: \t%@:%@", [serverAdresse stringValue], [portAdresse stringValue]);
+    NSLog(@"AndTekAgent | -- API-Pfad: \t\t%@", [apiAdresse stringValue]);
+    NSLog(@"AndTekAgent | -- Device-MAC: \t%@", [macAdresse stringValue]);
+    
+    if ([state intValue] == 0) {
+        NSLog(@"AndTekAgent | -- Forderung: \tLogin");
+    } else if  ([state intValue] == 1) {
+        NSLog(@"AndTekAgent | -- Forderung: \tLogout");
+    } else {
+        NSLog(@"AndTekAgent | -- Forderung: \tFehler bei der Parsen der Statusanforderung");
+    }
 }
 
 - (void) login: (NSNotification *) notification
 {
-    NSLog(@"Login: #%@ auf AndTek-Server %@", [macAdresse stringValue],[serverAdresse stringValue]);
     [self sendRequestWithState: @"0"];
     [statusItem setImage:statusOn];
 }
 
 - (void) logoff: (NSNotification *) notification
 {
-    NSLog(@"Logout: #%@ auf AndTek-Server %@", [macAdresse stringValue], [serverAdresse stringValue]);
 	[self sendRequestWithState: @"1"];
     [statusItem setImage:statusOff];
     
@@ -114,7 +128,6 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
-    
     [settingsWindow makeKeyAndOrderFront:self];
     [NSApp activateIgnoringOtherApps:YES];
     
@@ -127,6 +140,8 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
     [preferences setObject:[serverAdresse stringValue] forKey:@"server"];
     [preferences setObject:[portAdresse stringValue] forKey:@"port"];
     [preferences setObject:[apiAdresse stringValue] forKey:@"api"];
+
+    
     [preferences synchronize];
     
     [settingsWindow orderOut:nil];
@@ -146,5 +161,6 @@ static NSString * const kServerURL = @"http://192.168.100.238:8080/andphone/ACDS
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/frdmn/"]];    
     
 }
+
 
 @end

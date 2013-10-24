@@ -25,7 +25,6 @@
     NSImage                 *statusOn;
     NSImage                 *statusOff;
     NSUserDefaults          *preferences;
-    
 }
 
 -(IBAction)doLogin:(id)sender;
