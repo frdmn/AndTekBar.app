@@ -15,6 +15,9 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 1. AndTek call center
 1. OS X workstation
 1. Xcode
+1. Copy plist into "Preferences" folder:
+    
+    cp opt/de.frdmn.AndTekAgent.plist ~/Library/Preferences/
 
 ## Installation
 
