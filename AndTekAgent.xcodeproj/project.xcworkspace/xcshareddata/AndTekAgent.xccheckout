@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B0B817F6-2C11-4D9D-A4E2-19306ED9B86F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AndTekAgent</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</key>
+		<string>ssh://git.frd.mn/iWelt/andtekagent.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AndTekAgent.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.frd.mn/iWelt/andtekagent.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>01_cocoa_AndTekAgent</string>
+		</dict>
+	</array>
+</dict>
+</plist>
