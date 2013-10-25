@@ -1,0 +1,7 @@
+{	
+	api = "andphone/ACDService";
+	mac = "002414B2XXXX";
+	port = "8080";
+	server = "192.168.100.238";
+}
+
