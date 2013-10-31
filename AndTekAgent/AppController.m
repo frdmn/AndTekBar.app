@@ -62,9 +62,19 @@
         // Add support for screensaver switch
         [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.didstart" object:nil];
         [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screensaver.didstop" object:nil];
+        
+        // Add observer to logout before quit
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:nil];
+
     }
         
     return self;
+}
+
+
+- (void) applicationWillTerminate:(NSApplication *)application {
+    NSLog(@"AndTekAgent | Application got quit");
+    [self logoff: nil];
 }
 
 - (void) sendRequestWithState: (NSString *) state
@@ -95,6 +105,7 @@
         NSLog(@"AndTekAgent | -- Forderung: \tFehler bei der Parsen der Statusanforderung");
     }
 }
+
 
 - (void) login: (NSNotification *) notification
 {
