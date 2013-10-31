@@ -3,11 +3,12 @@ AndTek Agent
 
 Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek call center.
 
-## Features
+## Features / changelog
 
-* Login and logout out of AndTek queues manually via menubar application
-* Auto login/logout in queues on "Switch user" via OS X
-* Auto login/logout in queues on "Enter/exit screensaver"
+* 0.2: Login and logout out of AndTek queues manually via menubar application
+* 0.2.5: Auto login/logout in queues on "Switch user" event via OS X
+* 0.3: Auto login/logout in queues on "Enter/exit screensaver" event
+* 0.3.1: Auto logout before application gets quit
 
 ## Requirements
 
@@ -21,7 +22,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 * Clone this repo
 * Compile from source
 * Build the executable via Xcode
-* Copy plist into "Preferences" folder:  
+* Copy plist into "Preferences" folder:
 `cp opt/de.frdmn.AndTekAgent.plist ~/Library/Preferences/`
 * Adjust plist and replace the informations according to your Cisco/AndTek environment
 
@@ -34,3 +35,6 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 #### Settings pane
 
 ![settings](http://static.yeahwh.at/plugins/AndTekAgent/2_settings.png)
+
+## Version
+0.3.1
