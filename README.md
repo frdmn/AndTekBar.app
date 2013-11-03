@@ -8,7 +8,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 * 0.2: Login and logout out of AndTek queues manually via menubar application
 * 0.2.5: Auto login/logout in queues on "Switch user" event via OS X
 * 0.3: Auto login/logout in queues on "Enter/exit screensaver" event
-* 0.3.1: Auto logout before application gets quit
+* 0.3.1: Auto logout before application gets quit (fixed #1)
 
 ## Requirements
 
