@@ -12,6 +12,7 @@
         <customObject id="533" customClass="AppController">
             <connections>
                 <outlet property="apiAdresse" destination="545" id="583"/>
+                <outlet property="giraButton" destination="607" id="IOB-dA-dsv"/>
                 <outlet property="macAdresse" destination="549" id="584"/>
                 <outlet property="portAdresse" destination="542" id="585"/>
                 <outlet property="serverAdresse" destination="547" id="586"/>
@@ -182,7 +183,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="551">
                         <rect key="frame" x="108" y="3" width="162" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.3.1 - Copyright 2012 by @frdmn" id="558">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.3.2 - Copyright 2012 by @frdmn" id="558">
                             <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -211,7 +212,7 @@ Gw
                     <button id="607">
                         <rect key="frame" x="142" y="49" width="218" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Bildschirmschoner überwachen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="608">
+                        <buttonCell key="cell" type="check" title="Integration mit GiraHelper?" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="608">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
