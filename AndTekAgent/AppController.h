@@ -19,8 +19,6 @@
     IBOutlet    NSTextField *portAdresse;
     IBOutlet    NSTextField *apiAdresse;
     IBOutlet    NSWindow    *settingsWindow;
-    IBOutlet    NSButton    *giraButton;
-
     
     /* Anderes */
     NSStatusItem            *statusItem;

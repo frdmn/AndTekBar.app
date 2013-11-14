@@ -45,35 +45,7 @@
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
-    [giraButton setState:[preferences boolForKey:@"gira"]];
     [self login: nil];
-    
-    // Check if GiraHelper integration is active
-    if([giraButton state] == 1) {
-        // Get GiraHelper config file
-        NSFileManager* fileMgr = [NSFileManager defaultManager];
-        NSString *configFile = [NSHomeDirectory() stringByAppendingPathComponent:@".gira.cfg"];
-        NSString *execFile = [[NSHomeDirectory() stringByAppendingPathComponent:@".bin"] stringByAppendingPathComponent:@"gira"];
-        NSString *execArgs = [NSString stringWithFormat:@"%@ ein", execFile];
-        // Check if config file exists
-        BOOL configFileExists = [fileMgr fileExistsAtPath:configFile];
-        // Log if config is not found
-        if (configFileExists == NO){
-            NSLog(@"AndTekAgent | GiraHelper | Configuration not found (%@)", configFile);
-            // Otherwise continoue
-        } else {
-            // Check if GiraHelper binary exists
-            if (execFile == NO) {
-                // Log if binary is not found
-                NSLog(@"AndTekAgent | GiraHelper | Executable not found (%@)", execFile);
-            } else {
-                // Log attempt to call GiraHelper
-                NSLog(@"AndTekAgent | GiraHelper | Call \"ein\"-method.");
-                [[NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:[NSArray arrayWithObjects:@"-c", execArgs, nil]] waitUntilExit];
-            }
-        }
-    }
-
 }
 
 - (id) init
@@ -87,8 +59,13 @@
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self selector: @selector(logoff:) name: NSWorkspaceSessionDidResignActiveNotification object: nil];
         
         // Add support for screensaver switch
-        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.didstart" object:nil];
-        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screensaver.didstop" object:nil];
+//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.didstart" object:nil];
+//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.willstop" object:nil];
+//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screensaver.didstop" object:nil];
+
+        // Add support for locked screens
+        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screenIsLocked" object:nil];
+        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screenIsUnlocked" object:nil];
         
         // Add observer to logout before quit
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:nil];
@@ -102,32 +79,6 @@
 - (void) applicationWillTerminate:(NSApplication *)application {
     NSLog(@"AndTekAgent | Application got quit");
     [self logoff: nil];
-    
-    // Check if GiraHelper integration is active
-    if([giraButton state] == 1) {
-        // Get GiraHelper config file
-        NSFileManager* fileMgr = [NSFileManager defaultManager];
-        NSString *configFile = [NSHomeDirectory() stringByAppendingPathComponent:@".gira.cfg"];
-        NSString *execFile = [[NSHomeDirectory() stringByAppendingPathComponent:@".bin"] stringByAppendingPathComponent:@"gira"];
-        NSString *execArgs = [NSString stringWithFormat:@"%@ aus", execFile];
-        // Check if config file exists
-        BOOL configFileExists = [fileMgr fileExistsAtPath:configFile];
-        // Log if config is not found
-        if (configFileExists == NO){
-            NSLog(@"AndTekAgent | GiraHelper | Configuration not found (%@)", configFile);
-            // Otherwise continoue
-        } else {
-            // Check if GiraHelper binary exists
-            if (execFile == NO) {
-                // Log if binary is not found
-                NSLog(@"AndTekAgent | GiraHelper | Executable not found (%@)", execFile);
-            } else {
-                // Log attempt to call GiraHelper
-                NSLog(@"AndTekAgent | GiraHelper | Call \"ein\"-method.");
-                [[NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:[NSArray arrayWithObjects:@"-c", execArgs, nil]] waitUntilExit];
-            }
-        }
-    }
 }
 
 - (void) sendRequestWithState: (NSString *) state
@@ -199,7 +150,6 @@
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
-    [giraButton setState:[preferences boolForKey:@"gira"]];
     [settingsWindow makeKeyAndOrderFront:self];
     [NSApp activateIgnoringOtherApps:YES];
 }
@@ -210,7 +160,6 @@
     [preferences setObject:[serverAdresse stringValue] forKey:@"server"];
     [preferences setObject:[portAdresse stringValue] forKey:@"port"];
     [preferences setObject:[apiAdresse stringValue] forKey:@"api"];
-    [preferences setBool:[giraButton state] forKey:@"gira"];
     [preferences synchronize];
     [settingsWindow orderOut:nil];
 }
@@ -224,7 +173,7 @@
 
 -(IBAction)openurl:(id)sender{
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/frdmn/"]];    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://frd.mn/"]];
     
 }
 
