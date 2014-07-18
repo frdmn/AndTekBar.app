@@ -172,10 +172,7 @@
 }
 
 -(IBAction)openurl:(id)sender{
-    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://frd.mn/"]];
-    
 }
-
 
 @end
