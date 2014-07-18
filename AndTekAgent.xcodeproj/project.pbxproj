@@ -195,7 +195,7 @@
 			name = AndTekAgentTests;
 			productName = AndTekAgentTests;
 			productReference = 485662B61382777200A4EEE2 /* AndTekAgentTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
