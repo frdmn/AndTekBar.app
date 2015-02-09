@@ -10,31 +10,31 @@
 	<string>AndTekAgent</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</key>
-		<string>ssh://git.frd.mn/iWelt/andtekagent.git</string>
+		<key>29D993FBE0401AF3B98EFC7F687A16E6D94219F8</key>
+		<string>github.com:frdmn/AndTek.app.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AndTekAgent.xcodeproj/project.xcworkspace</string>
+	<string>AndTekAgent.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</key>
+		<key>29D993FBE0401AF3B98EFC7F687A16E6D94219F8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://git.frd.mn/iWelt/andtekagent.git</string>
+	<string>github.com:frdmn/AndTek.app.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</string>
+	<string>29D993FBE0401AF3B98EFC7F687A16E6D94219F8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C6B25B87-4427-4ECC-80E7-CD02A767F2C2</string>
+			<string>29D993FBE0401AF3B98EFC7F687A16E6D94219F8</string>
 			<key>IDESourceControlWCCName</key>
-			<string>01_cocoa_AndTekAgent</string>
+			<string>001_cocoa_AndTekAgent</string>
 		</dict>
 	</array>
 </dict>
