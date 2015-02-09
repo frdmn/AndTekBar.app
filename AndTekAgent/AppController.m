@@ -17,7 +17,6 @@
 @implementation AppController
 
 - (void) awakeFromNib{
-    
     //Create the NSStatusBar and set its length
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
     
@@ -38,6 +37,19 @@
     [statusItem setToolTip:@"AndTekAgent"];
     //Enables highlighting
     [statusItem setHighlightMode:YES];
+    
+    // Check if we need to create default NSUserDefaults (._.)
+    BOOL isRunMoreThanOnce = [[NSUserDefaults standardUserDefaults] boolForKey:@"isRunMoreThanOnce"];
+    if(!isRunMoreThanOnce){
+        // Then set the first run flag
+        [[NSUserDefaults standardUserDefaults] setObject:@"andphone/ACDService" forKey:@"api"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"002414B2XXXX" forKey:@"mac"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"8080" forKey:@"port"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"192.168.100.238" forKey:@"server"];
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"gira"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
     //UserDefaults holen
     preferences = [NSUserDefaults standardUserDefaults];
     //In TextField schreiben
