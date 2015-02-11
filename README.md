@@ -39,7 +39,8 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 * 0.3.2: [GiraHelper](http://git.frd.mn/iWelt/gira-helper/tree/master) integration (fixed #2)
 * 0.3.3: Removed [GiraHelper](http://git.frd.mn/iWelt/gira-helper/tree/master) integration (ಠ_ಠ)
 * 0.3.4: OS X 10.10 Yosemite deployment target
-* 0.3.5: Finally working default preferences
+* 0.3.5: ~~Finally working default preferences~~
+* 0.3.6: Finally working default preferences
 
 ### Version
-0.3.5
+0.3.6
