@@ -18,7 +18,7 @@
 		485662D613827A5800A4EEE2 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662D513827A5800A4EEE2 /* AppController.m */; };
 		48BB730115EF36F20079E377 /* iconoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 48BB72FF15EF36F20079E377 /* iconoff.png */; };
 		48BB730215EF36F20079E377 /* iconon.png in Resources */ = {isa = PBXBuildFile; fileRef = 48BB730015EF36F20079E377 /* iconon.png */; };
-		48EF464E13827DFB00CDEF3A /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EF464D13827DFB00CDEF3A /* logo3.png */; };
+		48C0B1B51A8B3B0A00D320B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C0B1B41A8B3B0A00D320B6 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		485662D513827A5800A4EEE2 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		48BB72FF15EF36F20079E377 /* iconoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconoff.png; sourceTree = SOURCE_ROOT; };
 		48BB730015EF36F20079E377 /* iconon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconon.png; sourceTree = SOURCE_ROOT; };
-		48EF464D13827DFB00CDEF3A /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo3.png; path = ../logo3.png; sourceTree = "<group>"; };
+		48C0B1B41A8B3B0A00D320B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +118,10 @@
 			children = (
 				48BB72FF15EF36F20079E377 /* iconoff.png */,
 				48BB730015EF36F20079E377 /* iconon.png */,
-				48EF464D13827DFB00CDEF3A /* logo3.png */,
 				485662D413827A5800A4EEE2 /* AppController.h */,
 				485662D513827A5800A4EEE2 /* AppController.m */,
 				485662AE1382777200A4EEE2 /* MainMenu.xib */,
+				48C0B1B41A8B3B0A00D320B6 /* Images.xcassets */,
 				485662A01382777200A4EEE2 /* Supporting Files */,
 			);
 			path = AndTekAgent;
@@ -230,7 +230,7 @@
 			files = (
 				485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */,
 				485662B01382777200A4EEE2 /* MainMenu.xib in Resources */,
-				48EF464E13827DFB00CDEF3A /* logo3.png in Resources */,
+				48C0B1B51A8B3B0A00D320B6 /* Images.xcassets in Resources */,
 				48BB730115EF36F20079E377 /* iconoff.png in Resources */,
 				48BB730215EF36F20079E377 /* iconon.png in Resources */,
 			);
@@ -376,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -392,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
