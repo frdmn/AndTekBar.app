@@ -47,6 +47,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"8080" forKey:@"port"];
         [[NSUserDefaults standardUserDefaults] setObject:@"192.168.100.238" forKey:@"server"];
         [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"gira"];
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"isRunMoreThanOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 
