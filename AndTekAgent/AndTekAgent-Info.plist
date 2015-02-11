@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>logo3.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>de.frdmn.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>mn.frd.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.3.5</string>
+	<string>0.3.6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>LSApplicationCategoryType</key>
