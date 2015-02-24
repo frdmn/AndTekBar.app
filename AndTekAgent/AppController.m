@@ -29,7 +29,6 @@
     
     //Sets the images in our NSStatusItem
     [statusItem setImage:statusOff];
-    //[statusItem setAlternateImage:statusHighlightImage];
     
     //Tells the NSStatusItem what menu to load
     [statusItem setMenu:statusMenu];
