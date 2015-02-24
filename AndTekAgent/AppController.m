@@ -24,6 +24,9 @@
     statusOn = [NSImage imageNamed:@"iconon"];
     statusOff = [NSImage imageNamed:@"iconoff"];
     
+    [statusOn setTemplate:YES];
+    [statusOff setTemplate:YES];
+    
     //Sets the images in our NSStatusItem
     [statusItem setImage:statusOff];
     
