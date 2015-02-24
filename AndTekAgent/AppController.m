@@ -20,12 +20,9 @@
     //Create the NSStatusBar and set its length
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
     
-    //Used to detect where our files are
-    NSBundle *bundle = [NSBundle mainBundle];
-    
     //Allocates and loads the images into the application which will be used for our NSStatusItem
-    statusOn = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"iconon" ofType:@"png"]];
-    statusOff = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"iconoff" ofType:@"png"]];
+    statusOn = [NSImage imageNamed:@"iconon"];
+    statusOff = [NSImage imageNamed:@"iconoff"];
     
     //Sets the images in our NSStatusItem
     [statusItem setImage:statusOff];
