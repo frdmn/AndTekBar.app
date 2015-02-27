@@ -57,7 +57,9 @@
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
+    
     [self login: nil];
+    [self checkCurrentState];
 }
 
 - (id) init
@@ -87,14 +89,39 @@
     return self;
 }
 
-
 - (void) applicationWillTerminate:(NSApplication *)application {
     NSLog(@"AndTekAgent | Application got quit");
     [self logoff: nil];
 }
 
+- (NSString *)checkCurrentState {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *requestFields = @"";
+    requestFields = [requestFields stringByAppendingFormat:@"queue=all&"];
+    requestFields = [requestFields stringByAppendingFormat:@"setsec=-1&"];
+    requestFields = [requestFields stringByAppendingFormat:@"page=available&"];
+    requestFields = [requestFields stringByAppendingFormat:@"dev=SEP%@", [macAdresse stringValue]];
+    
+    requestFields = [requestFields stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSData *requestData = [requestFields dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = requestData;
+    request.HTTPMethod = @"POST";
+    
+    NSHTTPURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
+
+    if (error == nil && response.statusCode == 200 && responseString) {
         NSLog(@"%i: %@ - %@", response.statusCode, url.absoluteString, requestFields);
         NSLog(@"%@", responseString);
+    } else {
+        //Error handling
+    }
+}
 
 - (NSData *)sendRequestWithState: (NSString *) state {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
