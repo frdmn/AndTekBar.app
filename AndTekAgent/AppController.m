@@ -9,7 +9,7 @@
 #import "AppController.h"
 
 @interface AppController()
-- (void) sendRequestWithState: (NSString *) state;
+- (NSData *) sendRequestWithState: (NSString *) state;
 - (void) login: (NSNotification *) notification;
 - (void) logoff: (NSNotification *) notification;
 @end
@@ -93,42 +93,39 @@
     [self logoff: nil];
 }
 
-- (void) sendRequestWithState: (NSString *) state
-{
-    
-    NSString * ServerURL = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
 
-	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: ServerURL]
-															  cachePolicy: NSURLRequestUseProtocolCachePolicy
-														  timeoutInterval: 20.0];
-	[theRequest setHTTPMethod: @"POST"];
-	const char *stringToSend = [[NSString stringWithFormat: @"queue=all&setsec=-1&page=available&state=%@&dev=SEP%@", state, [macAdresse stringValue]] UTF8String];
-	[theRequest setHTTPBody:[NSData dataWithBytes: stringToSend length: strlen(stringToSend)]];
-	
-	NSURLResponse *response;
-    [NSURLConnection sendSynchronousRequest: theRequest returningResponse: &response error:nil];
-        
-    NSLog(@"AndTekAgent | Version %@ (http://frd.mn/)", [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"]);
-    NSLog(@"AndTekAgent | -- Server-Socket: \t%@:%@", [serverAdresse stringValue], [portAdresse stringValue]);
-    NSLog(@"AndTekAgent | -- API-Pfad: \t\t%@", [apiAdresse stringValue]);
-    NSLog(@"AndTekAgent | -- Device-MAC: \t%@", [macAdresse stringValue]);
+- (NSData *)sendRequestWithState: (NSString *) state {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    if ([state intValue] == 0) {
-        NSLog(@"AndTekAgent | -- Forderung: \tLogin");
-    } else if  ([state intValue] == 1) {
-        NSLog(@"AndTekAgent | -- Forderung: \tLogout");
+    NSString *requestFields = @"";
+    requestFields = [requestFields stringByAppendingFormat:@"queue=all&"];
+    requestFields = [requestFields stringByAppendingFormat:@"setsec=-1&"];
+    requestFields = [requestFields stringByAppendingFormat:@"page=available&"];
+    requestFields = [requestFields stringByAppendingFormat:@"state=%@&", state];
+    requestFields = [requestFields stringByAppendingFormat:@"dev=SEP%@", [macAdresse stringValue]];
+    
+    requestFields = [requestFields stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSData *requestData = [requestFields dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = requestData;
+    request.HTTPMethod = @"POST";
+    
+    NSHTTPURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (error == nil && response.statusCode == 200) {
+        NSLog(@"%i: %@ - %@", response.statusCode, url.absoluteString, requestFields);
     } else {
-        NSLog(@"AndTekAgent | -- Forderung: \tFehler bei der Parsen der Statusanforderung");
+        //Error handling
     }
+    
+    return responseData;
 }
-
 
 - (void) login: (NSNotification *) notification
 {
     [self sendRequestWithState: @"0"];
     [statusItem setImage:statusOn];
-    
-    
 }
 
 - (void) logoff: (NSNotification *) notification
