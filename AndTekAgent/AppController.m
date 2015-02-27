@@ -135,8 +135,6 @@
 {
 	[self sendRequestWithState: @"1"];
     [statusItem setImage:statusOff];
-    
-    
 }
 
 - (void) dealloc {
@@ -177,10 +175,7 @@
 }
 
 -(IBAction)cancelSettings:(id)sender{
-    
     [settingsWindow orderOut:nil];
-    
-    
 }
 
 -(IBAction)openurl:(id)sender{

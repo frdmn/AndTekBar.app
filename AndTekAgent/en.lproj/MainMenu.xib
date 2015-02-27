@@ -737,7 +737,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="590">
-                        <rect key="frame" x="161" y="57" width="183" height="14"/>
+                        <rect key="frame" x="160" y="53" width="183" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ohne anführenden/abschließenden Slash" id="591">
                             <font key="font" metaFont="miniSystem"/>
@@ -748,7 +748,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="551">
                         <rect key="frame" x="129" y="3" width="121" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.3.6 - © 2015 by @frdmn" id="558">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.4.0 - © 2015 by @frdmn" id="558">
                             <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
