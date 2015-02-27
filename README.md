@@ -7,7 +7,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 
 * Cisco Unified Communications Manager
 * AndTek call center
-* Xcode to compile
+* ~~Xcode to compile~~ (only for development)
 
 ### Usage
 
@@ -26,9 +26,9 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 
 ### Screenshots
 
-![menubar](http://static.yeahwh.at/plugins/AndTekAgent/1_menubar.png)
+![menubar](http://up.frd.mn/DCdrQ.png)
 
-![settings](http://static.yeahwh.at/plugins/AndTekAgent/2_settings.png)
+![settings](http://up.frd.mn/C0sMr.png)
 
 ### Features / Changelog
 
@@ -41,9 +41,11 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 * 0.3.4: OS X 10.10 Yosemite deployment target
 * 0.3.5: ~~Finally working default preferences~~
 * 0.3.6: Finally working default preferences
+* 0.4.0: New dark mode compatible menu bar icon, native OS X shortcuts in preferences
 
 ### Version
-0.3.6
+
+0.4.0
 
 ### License
 
