@@ -71,9 +71,9 @@
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self selector: @selector(logoff:) name: NSWorkspaceSessionDidResignActiveNotification object: nil];
         
         // Add support for screensaver switch
-//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.didstart" object:nil];
-//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.willstop" object:nil];
-//        [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screensaver.didstop" object:nil];
+        // [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.didstart" object:nil];
+        // [NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screensaver.willstop" object:nil];
+        // [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screensaver.didstop" object:nil];
 
         // Add support for locked screens
         [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(logoff:) name:@"com.apple.screenIsLocked" object:nil];
@@ -93,6 +93,8 @@
     [self logoff: nil];
 }
 
+        NSLog(@"%i: %@ - %@", response.statusCode, url.absoluteString, requestFields);
+        NSLog(@"%@", responseString);
 
 - (NSData *)sendRequestWithState: (NSString *) state {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
@@ -140,6 +142,8 @@
     [statusOff release];
     [super dealloc];
 }
+
+/* IB action functions */
 
 -(IBAction)doLogin:(id)sender{
     [self login: nil];
