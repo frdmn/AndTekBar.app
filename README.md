@@ -42,10 +42,11 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 * 0.3.5: ~~Finally working default preferences~~
 * 0.3.6: Finally working default preferences
 * 0.4.0: New dark mode compatible menu bar icon, native OS X shortcuts in preferences
+* 0.4.1: Implement Sparkle framework to automate updates! Whoop!
 
 ### Version
 
-0.4.0
+0.4.1
 
 ### License
 
