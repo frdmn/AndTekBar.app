@@ -26,7 +26,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 
 ### Screenshots
 
-![menubar](http://up.frd.mn/DCdrQ.png)
+![menubar](http://up.frd.mn/q56wA.png)
 
 ![settings](http://up.frd.mn/C0sMr.png)
 
