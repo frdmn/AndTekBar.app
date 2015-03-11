@@ -599,6 +599,12 @@
                         <action selector="doLogout:" target="533" id="573"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Update check" id="M2h-kM-ia0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="Adk-ah-zXh" id="tBX-8c-Bpn"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="iDF-wn-NDA"/>
                 <menuItem title="Einstellungen" id="535">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -778,6 +784,7 @@ Gw
             </view>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="598"/>
+        <customObject id="Adk-ah-zXh" customClass="SUUpdater"/>
     </objects>
     <resources>
         <sound name="Bottle"/>
