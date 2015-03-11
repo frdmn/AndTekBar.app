@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484B3A931AB0561C00B9CCE6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484B3A921AB0561C00B9CCE6 /* Sparkle.framework */; };
+		484B3A951AB056F600B9CCE6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 484B3A921AB0561C00B9CCE6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		484B3AA81AB0592900B9CCE6 /* icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 484B3AA31AB0592900B9CCE6 /* icon.psd */; };
+		484B3AA91AB0592900B9CCE6 /* iconoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 484B3AA41AB0592900B9CCE6 /* iconoff.png */; };
+		484B3AAA1AB0592900B9CCE6 /* iconon.png in Resources */ = {isa = PBXBuildFile; fileRef = 484B3AA51AB0592900B9CCE6 /* iconon.png */; };
+		484B3AAB1AB0592900B9CCE6 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 484B3AA71AB0592900B9CCE6 /* dsa_pub.pem */; };
 		4856629A1382777200A4EEE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485662991382777200A4EEE2 /* Cocoa.framework */; };
 		485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485662A21382777200A4EEE2 /* InfoPlist.strings */; };
 		485662A71382777200A4EEE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662A61382777200A4EEE2 /* main.m */; };
@@ -16,8 +22,6 @@
 		485662C21382777200A4EEE2 /* AndTekAgentTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 485662C11382777200A4EEE2 /* AndTekAgentTests.h */; };
 		485662C41382777200A4EEE2 /* AndTekAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662C31382777200A4EEE2 /* AndTekAgentTests.m */; };
 		485662D613827A5800A4EEE2 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485662D513827A5800A4EEE2 /* AppController.m */; };
-		48BB730115EF36F20079E377 /* iconoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 48BB72FF15EF36F20079E377 /* iconoff.png */; };
-		48BB730215EF36F20079E377 /* iconon.png in Resources */ = {isa = PBXBuildFile; fileRef = 48BB730015EF36F20079E377 /* iconon.png */; };
 		48C0B1B51A8B3B0A00D320B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C0B1B41A8B3B0A00D320B6 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +35,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		484B3A941AB056DA00B9CCE6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				484B3A951AB056F600B9CCE6 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		484B3A921AB0561C00B9CCE6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		484B3AA31AB0592900B9CCE6 /* icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.psd; sourceTree = "<group>"; };
+		484B3AA41AB0592900B9CCE6 /* iconoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconoff.png; sourceTree = "<group>"; };
+		484B3AA51AB0592900B9CCE6 /* iconon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconon.png; sourceTree = "<group>"; };
+		484B3AA71AB0592900B9CCE6 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		485662951382777200A4EEE2 /* AndTekAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndTekAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		485662991382777200A4EEE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4856629C1382777200A4EEE2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,8 +72,6 @@
 		485662C31382777200A4EEE2 /* AndTekAgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekAgentTests.m; sourceTree = "<group>"; };
 		485662D413827A5800A4EEE2 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		485662D513827A5800A4EEE2 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		48BB72FF15EF36F20079E377 /* iconoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconoff.png; sourceTree = SOURCE_ROOT; };
-		48BB730015EF36F20079E377 /* iconon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconon.png; sourceTree = SOURCE_ROOT; };
 		48C0B1B41A8B3B0A00D320B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4856629A1382777200A4EEE2 /* Cocoa.framework in Frameworks */,
+				484B3A931AB0561C00B9CCE6 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +96,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484B3AA11AB0592900B9CCE6 /* Resource Files */ = {
+			isa = PBXGroup;
+			children = (
+				484B3AA21AB0592900B9CCE6 /* icons */,
+				484B3AA61AB0592900B9CCE6 /* update-key */,
+			);
+			path = "Resource Files";
+			sourceTree = "<group>";
+		};
+		484B3AA21AB0592900B9CCE6 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				484B3AA31AB0592900B9CCE6 /* icon.psd */,
+				484B3AA41AB0592900B9CCE6 /* iconoff.png */,
+				484B3AA51AB0592900B9CCE6 /* iconon.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		484B3AA61AB0592900B9CCE6 /* update-key */ = {
+			isa = PBXGroup;
+			children = (
+				484B3AA71AB0592900B9CCE6 /* dsa_pub.pem */,
+			);
+			path = "update-key";
+			sourceTree = "<group>";
+		};
 		4856628A1382777200A4EEE2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +130,7 @@
 				485662BA1382777200A4EEE2 /* AndTekAgentTests */,
 				485662981382777200A4EEE2 /* Frameworks */,
 				485662961382777200A4EEE2 /* Products */,
+				484B3AA11AB0592900B9CCE6 /* Resource Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +146,7 @@
 		485662981382777200A4EEE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				484B3A921AB0561C00B9CCE6 /* Sparkle.framework */,
 				485662991382777200A4EEE2 /* Cocoa.framework */,
 				4856629B1382777200A4EEE2 /* Other Frameworks */,
 			);
@@ -116,8 +166,6 @@
 		4856629F1382777200A4EEE2 /* AndTekAgent */ = {
 			isa = PBXGroup;
 			children = (
-				48BB72FF15EF36F20079E377 /* iconoff.png */,
-				48BB730015EF36F20079E377 /* iconon.png */,
 				485662D413827A5800A4EEE2 /* AppController.h */,
 				485662D513827A5800A4EEE2 /* AppController.m */,
 				485662AE1382777200A4EEE2 /* MainMenu.xib */,
@@ -168,6 +216,7 @@
 				485662911382777200A4EEE2 /* Sources */,
 				485662921382777200A4EEE2 /* Frameworks */,
 				485662931382777200A4EEE2 /* Resources */,
+				484B3A941AB056DA00B9CCE6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -228,11 +277,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484B3AAB1AB0592900B9CCE6 /* dsa_pub.pem in Resources */,
 				485662A41382777200A4EEE2 /* InfoPlist.strings in Resources */,
+				484B3AAA1AB0592900B9CCE6 /* iconon.png in Resources */,
 				485662B01382777200A4EEE2 /* MainMenu.xib in Resources */,
+				484B3AA81AB0592900B9CCE6 /* icon.psd in Resources */,
+				484B3AA91AB0592900B9CCE6 /* iconoff.png in Resources */,
 				48C0B1B51A8B3B0A00D320B6 /* Images.xcassets in Resources */,
-				48BB730115EF36F20079E377 /* iconoff.png in Resources */,
-				48BB730215EF36F20079E377 /* iconon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,11 +430,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AndTekAgent/AndTekAgent-Prefix.pch";
 				INFOPLIST_FILE = "AndTekAgent/AndTekAgent-Info.plist";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,10 +453,15 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AndTekAgent/AndTekAgent-Prefix.pch";
 				INFOPLIST_FILE = "AndTekAgent/AndTekAgent-Info.plist";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

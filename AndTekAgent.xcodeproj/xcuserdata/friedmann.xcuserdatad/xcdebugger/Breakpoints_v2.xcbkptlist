@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AndTekAgent/AppController.m"
-            timestampString = "445331396.618163"
+            timestampString = "446738491.626446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-dealloc"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-sendRequestWithState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
