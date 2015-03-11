@@ -59,7 +59,7 @@
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
     
     [self login: nil];
-    [self checkCurrentState];
+    // TODO // [self checkCurrentState];
 }
 
 - (id) init
@@ -94,6 +94,7 @@
     [self logoff: nil];
 }
 
+// TODO // implement this somehow
 - (NSString *)checkCurrentState {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
