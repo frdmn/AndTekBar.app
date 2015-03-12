@@ -1,5 +1,5 @@
-AndTek.app
-==========
+AndTekAgent
+===========
 
 Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek call center.
 
@@ -14,7 +14,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 #### Installation
 
 1. Download the latest release:  
-  https://github.com/frdmn/AndTek.app/releases
+  https://github.com/frdmn/AndTekAgent/releases
 1. Drop the applicaton in your `/Applications` folder
 1. Open it and adjust the informations according to your Cisco/AndTek environment
 
