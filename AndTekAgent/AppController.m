@@ -21,8 +21,8 @@
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
     
     //Allocates and loads the images into the application which will be used for our NSStatusItem
-    statusOn = [NSImage imageNamed:@"iconon"];
-    statusOff = [NSImage imageNamed:@"iconoff"];
+    statusOn = [NSImage imageNamed:@"online"];
+    statusOff = [NSImage imageNamed:@"offline"];
     
     [statusOn setTemplate:YES];
     [statusOff setTemplate:YES];
