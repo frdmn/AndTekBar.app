@@ -24,6 +24,10 @@
     statusOn = [NSImage imageNamed:@"online"];
     statusOff = [NSImage imageNamed:@"offline"];
     
+    // Set version in settings view
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    copyright.stringValue = [NSString stringWithFormat:@"v%@ - © 2015 by @frdmn", version];
+    
     [statusOn setTemplate:YES];
     [statusOff setTemplate:YES];
     

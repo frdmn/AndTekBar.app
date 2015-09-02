@@ -19,6 +19,7 @@
     IBOutlet    NSTextField *portAdresse;
     IBOutlet    NSTextField *apiAdresse;
     IBOutlet    NSWindow    *settingsWindow;
+    IBOutlet    NSTextField    *copyright;
     
     /* Anderes */
     NSStatusItem            *statusItem;

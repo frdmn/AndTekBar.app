@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -578,6 +578,7 @@
         <customObject id="533" customClass="AppController">
             <connections>
                 <outlet property="apiAdresse" destination="545" id="583"/>
+                <outlet property="copyright" destination="551" id="kiy-9y-VnV"/>
                 <outlet property="macAdresse" destination="549" id="584"/>
                 <outlet property="portAdresse" destination="542" id="585"/>
                 <outlet property="serverAdresse" destination="547" id="586"/>
@@ -754,7 +755,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="551">
                         <rect key="frame" x="129" y="3" width="121" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v0.4.0 - © 2015 by @frdmn" id="558">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="vX.X.X - © 2015 by @frdmn" id="558">
                             <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -770,7 +771,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="550">
-                        <rect key="frame" x="131" y="2" width="117" height="16"/>
+                        <rect key="frame" x="132" y="2" width="117" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="559">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
