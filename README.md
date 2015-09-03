@@ -50,7 +50,7 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 
 ### Version
 
-0.4.1
+0.5.1
 
 ### License
 
