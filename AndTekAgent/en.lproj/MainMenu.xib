@@ -579,6 +579,8 @@
             <connections>
                 <outlet property="apiAdresse" destination="545" id="583"/>
                 <outlet property="copyright" destination="551" id="kiy-9y-VnV"/>
+                <outlet property="loginItem" destination="537" id="9Ca-Fp-pod"/>
+                <outlet property="logoutItem" destination="536" id="twA-z5-Ljz"/>
                 <outlet property="macAdresse" destination="549" id="584"/>
                 <outlet property="portAdresse" destination="542" id="585"/>
                 <outlet property="serverAdresse" destination="547" id="586"/>

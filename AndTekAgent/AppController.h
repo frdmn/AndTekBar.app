@@ -21,6 +21,9 @@
     IBOutlet    NSWindow    *settingsWindow;
     IBOutlet    NSTextField    *copyright;
     
+    IBOutlet   NSMenuItem *loginItem;
+    IBOutlet   NSMenuItem *logoutItem;
+    
     /* Anderes */
     NSStatusItem            *statusItem;
     NSImage                 *statusOn;
