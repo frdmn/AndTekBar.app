@@ -20,7 +20,7 @@
     //Create the NSStatusBar and set its length
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
     
-    //Allocates and loads the images into the application which will be used for our NSStatusItem
+    //Allocates and loads the images into the application d.h. which will be used for our NSStatusItem
     statusOn = [NSImage imageNamed:@"online"];
     statusOff = [NSImage imageNamed:@"offline"];
     
@@ -62,8 +62,16 @@
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
     
-    [self login: nil];
-    // TODO // [self checkCurrentState];
+    // Check if Cisco server is reachable
+    if ([self checkIfServerIsReachable]) {
+        // Login
+        [self login: nil];
+    } else {
+        NSLog(@"Can't reach server... Hiding login/logout menu item");
+        // Hide login/logout element
+        [loginItem setHidden:YES];
+        [logoutItem setHidden:YES];
+    }
 }
 
 - (id) init
@@ -94,37 +102,12 @@
 }
 
 - (void) applicationWillTerminate:(NSApplication *)application {
-    NSLog(@"AndTekAgent | Application got quit");
-    [self logoff: nil];
-}
-
-// TODO // implement this somehow
-- (NSString *)checkCurrentState {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSLog(@"AndTekAgent | Application quit");
     
-    NSString *requestFields = @"";
-    requestFields = [requestFields stringByAppendingFormat:@"queue=all&"];
-    requestFields = [requestFields stringByAppendingFormat:@"setsec=-1&"];
-    requestFields = [requestFields stringByAppendingFormat:@"page=available&"];
-    requestFields = [requestFields stringByAppendingFormat:@"dev=SEP%@", [macAdresse stringValue]];
-    
-    requestFields = [requestFields stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSData *requestData = [requestFields dataUsingEncoding:NSUTF8StringEncoding];
-    request.HTTPBody = requestData;
-    request.HTTPMethod = @"POST";
-    
-    NSHTTPURLResponse *response = nil;
-    NSError *error = nil;
-    
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSString *responseString = [[NSString alloc]initWithData:responseData encoding:NSASCIIStringEncoding];
-
-    if (error == nil && response.statusCode == 200 && responseString) {
-        NSLog(@"%i: %@ - %@", response.statusCode, url.absoluteString, requestFields);
-        NSLog(@"%@", responseString);
+    if ([self checkIfServerIsReachable]) {
+        [self logoff: nil];
     } else {
-        //Error handling
+        NSLog(@"Can't reach server");
     }
 }
 
@@ -155,6 +138,23 @@
     
     return responseData;
 }
+
+-(BOOL) checkIfServerIsReachable {
+    NSString *url = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
+    NSHTTPURLResponse* response = nil;
+    NSError* error = nil;
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    // NSLog(@"statusCode = %d", [response statusCode]);
+    
+    if ([response statusCode] == 200){
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 
 - (void) login: (NSNotification *) notification
 {
