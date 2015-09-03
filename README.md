@@ -51,4 +51,4 @@ Handy Cocoa/Objective-C menubar App for Mac OS X to communicate with a AndTek ca
 
 ### License
 
-[WTFPL](LICENSE)
+[MIT](LICENSE)
