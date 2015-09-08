@@ -41,7 +41,7 @@ See [CHANGELOG.md](CHANGELOG.md) for more details.
 
 ## Version
 
-0.5.2
+0.5.3
 
 ## License
 
