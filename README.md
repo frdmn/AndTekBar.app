@@ -4,15 +4,12 @@
 
 Tiny menubar App for OS X to control your AndTek call center.
 
-Caution: Since version 0.5.3 AndTekBar has a new name, thus a new bundle ID. This means you need to download the application manually to obtain the latest versions. Auto updates will be disabled for the "old" application.
+Caution: AndTekBar uses a new name since version 0.5.3, thus a new bundle ID. This means you need to download the application manually to obtain the latest versions. Auto updates will be disabled for the "old" application.
 
 ## Installation
 
 1. Make sure you've installed all requirements
-2. Clone this repository:  
-  `git clone https://github.com/frdmn/AndTekBar.app`
-3. Install the project using `make`:  
-  `make install`
+2. Download a prebuilt binary from [GitHub releases](https://github.com/frdmn/AndTekBar.app/releases)
 
 ## Development
 
@@ -21,7 +18,10 @@ Here's a short explanation how to contribute to `AndTekBar.app`:
 1. Make sure you've installed all requirements
 2. Clone this repository:  
   `git clone https://github.com/frdmn/AndTekBar.app`
-3. Open Xcode and hit "Build" to compile an executable
+3. Compile the project:  
+  `xcodebuild`
+4. Open the executable which can be found in:  
+  `${GITDIR}/build/Release/AndTekBar.app`
 
 ## Contributing
 
