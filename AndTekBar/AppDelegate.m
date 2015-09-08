@@ -123,7 +123,7 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     if (error == nil && response.statusCode == 200) {
-        NSLog(@"%i: %@ - %@", response.statusCode, url.absoluteString, requestFields);
+        NSLog(@"%li: %@ - %@", (long)response.statusCode, url.absoluteString, requestFields);
     }
     
     return responseData;
