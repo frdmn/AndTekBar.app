@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48A44E341B9EEC1C00357FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E331B9EEC1C00357FA6 /* AppDelegate.m */; };
+		48A44E361B9EEC1C00357FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E351B9EEC1C00357FA6 /* main.m */; };
+		48A44E471B9EEC1C00357FA6 /* AndTekBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */; };
+		48A44E511B9EECBF00357FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E501B9EECBF00357FA6 /* Images.xcassets */; };
+		48A44E531B9EED3100357FA6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E521B9EED3100357FA6 /* MainMenu.xib */; };
+		48A44E551B9EED9400357FA6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; };
+		48A44E571B9EEDBF00357FA6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		48A44E591B9EEE6400357FA6 /* sparkle.pem in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E581B9EEE6400357FA6 /* sparkle.pem */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48A44E411B9EEC1C00357FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48A44E251B9EEC1C00357FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48A44E2C1B9EEC1C00357FA6;
+			remoteInfo = AndTekBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48A44E561B9EEDAC00357FA6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				48A44E571B9EEDBF00357FA6 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		48A44E2D1B9EEC1C00357FA6 /* AndTekBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndTekBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A44E311B9EEC1C00357FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48A44E321B9EEC1C00357FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		48A44E331B9EEC1C00357FA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		48A44E351B9EEC1C00357FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48A44E401B9EEC1C00357FA6 /* AndTekBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndTekBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A44E451B9EEC1C00357FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekBarTests.m; sourceTree = "<group>"; };
+		48A44E501B9EECBF00357FA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		48A44E521B9EED3100357FA6 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		48A44E541B9EED9400357FA6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		48A44E581B9EEE6400357FA6 /* sparkle.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparkle.pem; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48A44E2A1B9EEC1C00357FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A44E551B9EED9400357FA6 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A44E3D1B9EEC1C00357FA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48A44E241B9EEC1C00357FA6 = {
+			isa = PBXGroup;
+			children = (
+				48A44E2F1B9EEC1C00357FA6 /* AndTekBar */,
+				48A44E431B9EEC1C00357FA6 /* AndTekBarTests */,
+				48A44E2E1B9EEC1C00357FA6 /* Products */,
+				48A44E541B9EED9400357FA6 /* Sparkle.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		48A44E2E1B9EEC1C00357FA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48A44E2D1B9EEC1C00357FA6 /* AndTekBar.app */,
+				48A44E401B9EEC1C00357FA6 /* AndTekBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48A44E2F1B9EEC1C00357FA6 /* AndTekBar */ = {
+			isa = PBXGroup;
+			children = (
+				48A44E321B9EEC1C00357FA6 /* AppDelegate.h */,
+				48A44E331B9EEC1C00357FA6 /* AppDelegate.m */,
+				48A44E501B9EECBF00357FA6 /* Images.xcassets */,
+				48A44E521B9EED3100357FA6 /* MainMenu.xib */,
+				48A44E301B9EEC1C00357FA6 /* Supporting Files */,
+			);
+			path = AndTekBar;
+			sourceTree = "<group>";
+		};
+		48A44E301B9EEC1C00357FA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48A44E581B9EEE6400357FA6 /* sparkle.pem */,
+				48A44E311B9EEC1C00357FA6 /* Info.plist */,
+				48A44E351B9EEC1C00357FA6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48A44E431B9EEC1C00357FA6 /* AndTekBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */,
+				48A44E441B9EEC1C00357FA6 /* Supporting Files */,
+			);
+			path = AndTekBarTests;
+			sourceTree = "<group>";
+		};
+		48A44E441B9EEC1C00357FA6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48A44E451B9EEC1C00357FA6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48A44E2C1B9EEC1C00357FA6 /* AndTekBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48A44E4A1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBar" */;
+			buildPhases = (
+				48A44E291B9EEC1C00357FA6 /* Sources */,
+				48A44E2A1B9EEC1C00357FA6 /* Frameworks */,
+				48A44E2B1B9EEC1C00357FA6 /* Resources */,
+				48A44E561B9EEDAC00357FA6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AndTekBar;
+			productName = AndTekBar;
+			productReference = 48A44E2D1B9EEC1C00357FA6 /* AndTekBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48A44E3F1B9EEC1C00357FA6 /* AndTekBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48A44E4D1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBarTests" */;
+			buildPhases = (
+				48A44E3C1B9EEC1C00357FA6 /* Sources */,
+				48A44E3D1B9EEC1C00357FA6 /* Frameworks */,
+				48A44E3E1B9EEC1C00357FA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48A44E421B9EEC1C00357FA6 /* PBXTargetDependency */,
+			);
+			name = AndTekBarTests;
+			productName = AndTekBarTests;
+			productReference = 48A44E401B9EEC1C00357FA6 /* AndTekBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48A44E251B9EEC1C00357FA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = frdmn;
+				TargetAttributes = {
+					48A44E2C1B9EEC1C00357FA6 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					48A44E3F1B9EEC1C00357FA6 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 48A44E2C1B9EEC1C00357FA6;
+					};
+				};
+			};
+			buildConfigurationList = 48A44E281B9EEC1C00357FA6 /* Build configuration list for PBXProject "AndTekBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48A44E241B9EEC1C00357FA6;
+			productRefGroup = 48A44E2E1B9EEC1C00357FA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48A44E2C1B9EEC1C00357FA6 /* AndTekBar */,
+				48A44E3F1B9EEC1C00357FA6 /* AndTekBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48A44E2B1B9EEC1C00357FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A44E511B9EECBF00357FA6 /* Images.xcassets in Resources */,
+				48A44E531B9EED3100357FA6 /* MainMenu.xib in Resources */,
+				48A44E591B9EEE6400357FA6 /* sparkle.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A44E3E1B9EEC1C00357FA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48A44E291B9EEC1C00357FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A44E361B9EEC1C00357FA6 /* main.m in Sources */,
+				48A44E341B9EEC1C00357FA6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A44E3C1B9EEC1C00357FA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A44E471B9EEC1C00357FA6 /* AndTekBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48A44E421B9EEC1C00357FA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48A44E2C1B9EEC1C00357FA6 /* AndTekBar */;
+			targetProxy = 48A44E411B9EEC1C00357FA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		48A44E481B9EEC1C00357FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		48A44E491B9EEC1C00357FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		48A44E4B1B9EEC1C00357FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AndTekBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48A44E4C1B9EEC1C00357FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AndTekBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		48A44E4E1B9EEC1C00357FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AndTekBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AndTekBar.app/Contents/MacOS/AndTekBar";
+			};
+			name = Debug;
+		};
+		48A44E4F1B9EEC1C00357FA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AndTekBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AndTekBar.app/Contents/MacOS/AndTekBar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48A44E281B9EEC1C00357FA6 /* Build configuration list for PBXProject "AndTekBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48A44E481B9EEC1C00357FA6 /* Debug */,
+				48A44E491B9EEC1C00357FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48A44E4A1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48A44E4B1B9EEC1C00357FA6 /* Debug */,
+				48A44E4C1B9EEC1C00357FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		48A44E4D1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48A44E4E1B9EEC1C00357FA6 /* Debug */,
+				48A44E4F1B9EEC1C00357FA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48A44E251B9EEC1C00357FA6 /* Project object */;
+}
