@@ -425,6 +425,7 @@
 				48A44E4C1B9EEC1C00357FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48A44E4D1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBarTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				48A44E4F1B9EEC1C00357FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
