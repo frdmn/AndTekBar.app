@@ -18,3 +18,6 @@
 * 0.5.2: 
   * Project name change (__Caution__: new bundle ID again! :trollface:)
   * Refactor code base
+* 0.5.3:
+  * Revert project name change (__Caution__: new bundle ID once again! :trollface: :trollface: :trollface:)
+  * Bug fixes
