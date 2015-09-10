@@ -36,22 +36,17 @@
     // Call function to draw version number in settings window
     [self drawVersion];
     
-    // Check if we need to create default NSUserDefaults (._.)
-    BOOL isRunMoreThanOnce = [[NSUserDefaults standardUserDefaults] boolForKey:@"isRunMoreThanOnce"];
-    if(!isRunMoreThanOnce){
-        // Then set the first run flag
-        [[NSUserDefaults standardUserDefaults] setObject:@"andphone/ACDService" forKey:@"api"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"002414B2XXXX" forKey:@"mac"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"8080" forKey:@"port"];
-        [[NSUserDefaults standardUserDefaults] setObject:@"192.168.100.238" forKey:@"server"];
-        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"gira"];
-        [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"isRunMoreThanOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
-    // Get existing user dafaults
+    // Set preferences defaults
+    NSDictionary *userDefaultsDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          @"002414B2XXXX",        @"mac",
+                                          @"192.168.100.238",     @"server",
+                                          @"8080",                @"port",
+                                          @"andphone/ACDService", @"api",
+                                          nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsDefaults];
+   
+    // Fill in UI elements
     preferences = [NSUserDefaults standardUserDefaults];
-    // ... and render in GUI
     [macAdresse setStringValue:[preferences stringForKey:@"mac"]];
     [serverAdresse setStringValue:[preferences stringForKey:@"server"]];
     [portAdresse setStringValue:[preferences stringForKey:@"port"]];
