@@ -33,9 +33,6 @@
     [statusItem setToolTip:@"AndTekBar.app"];
     [statusItem setHighlightMode:YES];
     
-    // Call function to draw version number in settings window
-    [self drawVersion];
-    
     // Set preferences defaults
     NSDictionary *userDefaultsDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                           @"002414B2XXXX",        @"mac",
@@ -71,6 +68,9 @@
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(login:) name:@"com.apple.screenIsUnlocked" object:nil];
     // ... as well as quit event
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:nil];
+    
+    // Call function to draw version number in settings window
+    [self drawVersion];
 }
 
 /*!
