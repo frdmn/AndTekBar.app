@@ -603,7 +603,7 @@
                         <action selector="doLogout:" target="533" id="573"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Failure: XXX" enabled="NO" id="9XX-Ac-c1E">
+                <menuItem title="Fehler: Server konnte nicht erreicht werden" enabled="NO" id="9XX-Ac-c1E">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem title="Reconnect" id="c5w-hq-gmj">
