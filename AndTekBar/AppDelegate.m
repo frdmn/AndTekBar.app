@@ -108,8 +108,8 @@
  */
 
 -(void) enableMenuItem {
-    [loginItem setHidden:YES];
-    [logoutItem setHidden:YES];
+    [loginItem setHidden:NO];
+    [logoutItem setHidden:NO];
 }
 
 -(void) disableMenuItem {
