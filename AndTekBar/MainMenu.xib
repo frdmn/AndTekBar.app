@@ -578,10 +578,12 @@
             <connections>
                 <outlet property="apiAdresse" destination="545" id="583"/>
                 <outlet property="copyright" destination="551" id="kiy-9y-VnV"/>
+                <outlet property="failureItem" destination="9XX-Ac-c1E" id="J0f-nD-RA3"/>
                 <outlet property="loginItem" destination="537" id="9Ca-Fp-pod"/>
                 <outlet property="logoutItem" destination="536" id="twA-z5-Ljz"/>
                 <outlet property="macAdresse" destination="549" id="584"/>
                 <outlet property="portAdresse" destination="542" id="585"/>
+                <outlet property="reconnectItem" destination="c5w-hq-gmj" id="86r-4M-puS"/>
                 <outlet property="serverAdresse" destination="547" id="586"/>
                 <outlet property="settingsWindow" destination="539" id="582"/>
                 <outlet property="statusMenu" destination="534" id="581"/>
@@ -601,13 +603,23 @@
                         <action selector="doLogout:" target="533" id="573"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Failure: XXX" enabled="NO" id="9XX-Ac-c1E">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Reconnect" id="c5w-hq-gmj">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="doLogin:" target="533" id="VDg-Bz-e1s"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="iDF-wn-NDA"/>
                 <menuItem title="Update check" id="M2h-kM-ia0">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="checkForUpdates:" target="Adk-ah-zXh" id="ys9-zt-QHw"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="iDF-wn-NDA"/>
+                <menuItem isSeparatorItem="YES" id="cZA-ro-uI4"/>
                 <menuItem title="Einstellungen" id="535">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -621,6 +633,7 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="486" y="364.5"/>
         </menu>
         <window title="Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="539">
             <windowStyleMask key="styleMask" titled="YES"/>
@@ -775,7 +788,7 @@ Gw
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="575" y="381"/>
+            <point key="canvasLocation" x="703" y="165"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="598"/>
         <customObject id="Adk-ah-zXh" customClass="SUUpdater"/>
