@@ -50,15 +50,7 @@
     [apiAdresse setStringValue:[preferences stringForKey:@"api"]];
     
     // Check if Cisco server is reachable
-    if ([self checkIfServerIsReachable]) {
-        // If reachable, login to call center on App start
-        [self login: nil];
-    } else {
-        // Otherwise disable login/logout menues
-        NSLog(@"Can't reach server... Hiding login/logout menu item");
-        [loginItem setHidden:YES];
-        [logoutItem setHidden:YES];
-    }
+    [self checkIfServerIsReachable];
     
     // Listen to screen saver events
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self selector: @selector(login:) name:  NSWorkspaceSessionDidBecomeActiveNotification object: nil];
@@ -71,6 +63,57 @@
     
     // Call function to draw version number in settings window
     [self drawVersion];
+}
+
+/*!
+ * Initial server reachability check
+ */
+-(void) checkIfServerIsReachable {
+    NSLog(@"Trying to reach AndTek server ...");
+    NSString *url = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+         if ([data length] > 0 && error == nil) {
+             NSLog(@"Successfully conncted to %@:%@", [serverAdresse stringValue], [portAdresse stringValue]);
+             [self didFinishCheckingReachability:dataString];
+         } else  {
+             NSLog(@"Error while trying to connct to %@:%@", [serverAdresse stringValue], [portAdresse stringValue]);
+             [self didFinishCheckingReachability:FALSE];
+//             if ([data length] == 0 && error == nil) {
+//                 NSLog(@"empty reply");
+//             } else if (error != nil && error.code == NSURLErrorTimedOut) {
+//                 NSLog(@"timed out");
+//             } else if (error != nil) {
+//                 NSLog(@"error:  %@", error);
+//             }
+         }
+     }];
+}
+
+- (void)didFinishCheckingReachability:(NSString *)data {
+    if (data){
+        [self enableMenuItem];
+        [self login: nil];
+    } else {
+        [self disableMenuItem];
+    }
+}
+
+/*!
+ * Hide / show menu items
+ */
+
+-(void) enableMenuItem {
+    [loginItem setHidden:YES];
+    [logoutItem setHidden:YES];
+}
+
+-(void) disableMenuItem {
+    [loginItem setHidden:YES];
+    [logoutItem setHidden:YES];
 }
 
 /*!
@@ -87,11 +130,7 @@
  */
 - (void) applicationWillTerminate:(NSApplication *)application {
     NSLog(@"AndTekAgent | Application quit");
-    if ([self checkIfServerIsReachable]) {
-        [self logoff: nil];
-    } else {
-        NSLog(@"Can't reach server");
-    }
+    [self logoff: nil];
 }
 
 /*!
@@ -124,6 +163,8 @@
     return responseData;
 }
 
+
+
 /*!
  * Login call center using [self sendRequestWithState]
  */
@@ -142,23 +183,6 @@
     [statusItem setImage:statusOff];
 }
 
-/*!
- * Server connectivity check
- */
--(BOOL) checkIfServerIsReachable {
-    NSString *url = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
-    
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
-    NSHTTPURLResponse* response = nil;
-    NSError* error = nil;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    if ([response statusCode] == 200){
-        return YES;
-    } else {
-        return NO;
-    }
-}
 
 /*!
  * Release from memory
