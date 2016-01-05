@@ -26,6 +26,7 @@
     NSStatusItem            *statusItem;
     NSImage                 *statusOn;
     NSImage                 *statusOff;
+    NSImage                 *statusFailure;
     NSUserDefaults          *preferences;
 }
 

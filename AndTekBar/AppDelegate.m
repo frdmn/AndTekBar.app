@@ -26,8 +26,10 @@
     // Allocate and load the images into the project
     statusOn = [NSImage imageNamed:@"online"];
     statusOff = [NSImage imageNamed:@"offline"];
+    statusFailure = [NSImage imageNamed:@"failure"];
     [statusOn setTemplate:YES];
     [statusOff setTemplate:YES];
+    [statusFailure setTemplate:YES];
     // Prepare our NSStatusItem
     [statusItem setImage:statusOff]; // off by default
     [statusItem setMenu:statusMenu];
@@ -83,6 +85,7 @@
          } else  {
              NSLog(@"Error while trying to connct to %@:%@", [serverAdresse stringValue], [portAdresse stringValue]);
              [self didFinishCheckingReachability:FALSE];
+             [statusItem setImage:statusFailure];
 //             if ([data length] == 0 && error == nil) {
 //                 NSLog(@"empty reply");
 //             } else if (error != nil && error.code == NSURLErrorTimedOut) {
@@ -190,6 +193,7 @@
         [statusItem setImage:statusOn];
     } else {
         NSLog(@"No internet connection :(");
+        [statusItem setImage:statusFailure];
     }
 }
 
@@ -203,6 +207,7 @@
         [statusItem setImage:statusOff];
     } else {
         NSLog(@"No internet connection :(");
+        [statusItem setImage:statusFailure];
     }
 }
 
