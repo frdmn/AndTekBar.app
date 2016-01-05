@@ -21,6 +21,8 @@
     
     IBOutlet   NSMenuItem *loginItem;
     IBOutlet   NSMenuItem *logoutItem;
+    IBOutlet   NSMenuItem *failureItem;
+    IBOutlet   NSMenuItem *reconnectItem;
     
     /* Anderes */
     NSStatusItem            *statusItem;

@@ -71,7 +71,7 @@
 /*!
  * Initial server reachability check
  */
--(void) checkIfServerIsReachable {
+-(IBAction) checkIfServerIsReachable {
     NSLog(@"Trying to reach AndTek server ...");
     NSString *url = [NSString stringWithFormat: @"http://%@:%@/%@", [serverAdresse stringValue], [portAdresse stringValue], [apiAdresse stringValue]];
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
@@ -113,11 +113,15 @@
 -(void) enableMenuItem {
     [loginItem setHidden:NO];
     [logoutItem setHidden:NO];
+    [failureItem setHidden:YES];
+    [reconnectItem setHidden:YES];
 }
 
 -(void) disableMenuItem {
     [loginItem setHidden:YES];
     [logoutItem setHidden:YES];
+    [failureItem setHidden:NO];
+    [reconnectItem setHidden:NO];
 }
 
 /*!
@@ -191,9 +195,11 @@
     if ([self canAccessInternet]){
         [self sendRequestWithState: @"0"];
         [statusItem setImage:statusOn];
+        [self enableMenuItem];
     } else {
         NSLog(@"No internet connection :(");
         [statusItem setImage:statusFailure];
+        [self disableMenuItem];
     }
 }
 
@@ -205,9 +211,11 @@
     if ([self canAccessInternet]){
         [self sendRequestWithState: @"1"];
         [statusItem setImage:statusOff];
+        [self enableMenuItem];
     } else {
         NSLog(@"No internet connection :(");
         [statusItem setImage:statusFailure];
+        [self disableMenuItem];
     }
 }
 
