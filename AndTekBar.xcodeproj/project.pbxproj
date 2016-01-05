@@ -15,6 +15,7 @@
 		48A44E551B9EED9400357FA6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; };
 		48A44E571B9EEDBF00357FA6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48A44E591B9EEE6400357FA6 /* sparkle.pem in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E581B9EEE6400357FA6 /* sparkle.pem */; };
+		DD96CA751C3BC571007993B2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DD96CA741C3BC571007993B2 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		48A44E521B9EED3100357FA6 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		48A44E541B9EED9400357FA6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		48A44E581B9EEE6400357FA6 /* sparkle.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparkle.pem; sourceTree = "<group>"; };
+		DD96CA731C3BC571007993B2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DD96CA741C3BC571007993B2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				48A44E501B9EECBF00357FA6 /* Images.xcassets */,
 				48A44E521B9EED3100357FA6 /* MainMenu.xib */,
 				48A44E301B9EEC1C00357FA6 /* Supporting Files */,
+				DD96CA731C3BC571007993B2 /* Reachability.h */,
+				DD96CA741C3BC571007993B2 /* Reachability.m */,
 			);
 			path = AndTekBar;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A44E361B9EEC1C00357FA6 /* main.m in Sources */,
+				DD96CA751C3BC571007993B2 /* Reachability.m in Sources */,
 				48A44E341B9EEC1C00357FA6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

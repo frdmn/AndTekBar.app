@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
 
 @interface AppDelegate ()
 - (NSData *) sendRequestWithState: (NSString *) state;
@@ -117,6 +118,21 @@
 }
 
 /*!
+ * Check if connected to internet
+ */
+- (BOOL)canAccessInternet
+{
+    Reachability *IsReachable = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStats = [IsReachable currentReachabilityStatus];
+    
+    if (internetStats == NotReachable) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+/*!
  * Function to render the project version (out of Info.plist) in the GUI
  */
 - (void) drawVersion{
@@ -168,10 +184,13 @@
 /*!
  * Login call center using [self sendRequestWithState]
  */
-- (void) login: (NSNotification *) notification
-{
-    [self sendRequestWithState: @"0"];
-    [statusItem setImage:statusOn];
+- (void) login: (NSNotification *) notification {
+    if ([self canAccessInternet]){
+        [self sendRequestWithState: @"0"];
+        [statusItem setImage:statusOn];
+    } else {
+        NSLog(@"No internet connection :(");
+    }
 }
 
 /*!
@@ -179,8 +198,12 @@
  */
 - (void) logoff: (NSNotification *) notification
 {
-    [self sendRequestWithState: @"1"];
-    [statusItem setImage:statusOff];
+    if ([self canAccessInternet]){
+        [self sendRequestWithState: @"1"];
+        [statusItem setImage:statusOff];
+    } else {
+        NSLog(@"No internet connection :(");
+    }
 }
 
 
