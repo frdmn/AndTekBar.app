@@ -12,12 +12,14 @@
 * 0.4.0: New dark mode compatible menu bar icon, native OS X shortcuts in preferences
 * 0.4.1: Implement Sparkle framework to automate updates! Whoop!
 * 0.5.0: New menubar icon
-* 0.5.1: 
+* 0.5.1:
   * Server connectivity check on startup
   * Use MIT license instead of WTFPL
-* 0.5.2: 
+* 0.5.2:
   * Project name change (__Caution__: new bundle ID again! :trollface:)
   * Refactor code base
 * 0.5.3:
   * Revert project name change (__Caution__: new bundle ID once again! :trollface: :trollface: :trollface:)
   * Bug fixes
+* 1.0.0:
+  * Refactor to Swift

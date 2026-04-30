@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48A44E341B9EEC1C00357FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E331B9EEC1C00357FA6 /* AppDelegate.m */; };
-		48A44E361B9EEC1C00357FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E351B9EEC1C00357FA6 /* main.m */; };
-		48A44E471B9EEC1C00357FA6 /* AndTekBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */; };
 		48A44E511B9EECBF00357FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E501B9EECBF00357FA6 /* Images.xcassets */; };
-		48A44E531B9EED3100357FA6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E521B9EED3100357FA6 /* MainMenu.xib */; };
-		48A44E551B9EED9400357FA6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; };
-		48A44E571B9EEDBF00357FA6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48A44E541B9EED9400357FA6 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		48A44E591B9EEE6400357FA6 /* sparkle.pem in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E581B9EEE6400357FA6 /* sparkle.pem */; };
-		DD96CA751C3BC571007993B2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DD96CA741C3BC571007993B2 /* Reachability.m */; };
+		EE00000200000000000002AA /* AndTekBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000100000000000001AA /* AndTekBarApp.swift */; };
+		EE00000400000000000004AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000300000000000003AA /* AppDelegate.swift */; };
+		EE00000600000000000006AA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000500000000000005AA /* AppState.swift */; };
+		EE00000800000000000008AA /* AndTekService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000700000000000007AA /* AndTekService.swift */; };
+		EE00000A0000000000000AAA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000900000000000009AA /* NetworkMonitor.swift */; };
+		EE00000C0000000000000CAA /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000B0000000000000BAA /* MenuBarView.swift */; };
+		EE00000E0000000000000EAA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000D0000000000000DAA /* SettingsView.swift */; };
+		EE00001200000000000012AA /* AndTekServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00001100000000000011AA /* AndTekServiceTests.swift */; };
+		EE00001400000000000014AA /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00001300000000000013AA /* AppStateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,33 +30,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		48A44E561B9EEDAC00357FA6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				48A44E571B9EEDBF00357FA6 /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		48A44E2D1B9EEC1C00357FA6 /* AndTekBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndTekBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A44E311B9EEC1C00357FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48A44E321B9EEC1C00357FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		48A44E331B9EEC1C00357FA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48A44E351B9EEC1C00357FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48A44E401B9EEC1C00357FA6 /* AndTekBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndTekBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A44E451B9EEC1C00357FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AndTekBarTests.m; sourceTree = "<group>"; };
 		48A44E501B9EECBF00357FA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		48A44E521B9EED3100357FA6 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		48A44E541B9EED9400357FA6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		48A44E581B9EEE6400357FA6 /* sparkle.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sparkle.pem; sourceTree = "<group>"; };
-		DD96CA731C3BC571007993B2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		DD96CA741C3BC571007993B2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		EE00000100000000000001AA /* AndTekBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekBarApp.swift; sourceTree = "<group>"; };
+		EE00000300000000000003AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE00000500000000000005AA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EE00000700000000000007AA /* AndTekService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekService.swift; sourceTree = "<group>"; };
+		EE00000900000000000009AA /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		EE00000B0000000000000BAA /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		EE00000D0000000000000DAA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE00001100000000000011AA /* AndTekServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekServiceTests.swift; sourceTree = "<group>"; };
+		EE00001300000000000013AA /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A44E551B9EED9400357FA6 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +73,6 @@
 				48A44E2F1B9EEC1C00357FA6 /* AndTekBar */,
 				48A44E431B9EEC1C00357FA6 /* AndTekBarTests */,
 				48A44E2E1B9EEC1C00357FA6 /* Products */,
-				48A44E541B9EED9400357FA6 /* Sparkle.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +88,15 @@
 		48A44E2F1B9EEC1C00357FA6 /* AndTekBar */ = {
 			isa = PBXGroup;
 			children = (
-				48A44E321B9EEC1C00357FA6 /* AppDelegate.h */,
-				48A44E331B9EEC1C00357FA6 /* AppDelegate.m */,
+				EE00000100000000000001AA /* AndTekBarApp.swift */,
+				EE00000300000000000003AA /* AppDelegate.swift */,
+				EE00000500000000000005AA /* AppState.swift */,
+				EE00000700000000000007AA /* AndTekService.swift */,
+				EE00000900000000000009AA /* NetworkMonitor.swift */,
+				EE00000B0000000000000BAA /* MenuBarView.swift */,
+				EE00000D0000000000000DAA /* SettingsView.swift */,
 				48A44E501B9EECBF00357FA6 /* Images.xcassets */,
-				48A44E521B9EED3100357FA6 /* MainMenu.xib */,
 				48A44E301B9EEC1C00357FA6 /* Supporting Files */,
-				DD96CA731C3BC571007993B2 /* Reachability.h */,
-				DD96CA741C3BC571007993B2 /* Reachability.m */,
 			);
 			path = AndTekBar;
 			sourceTree = "<group>";
@@ -113,9 +104,7 @@
 		48A44E301B9EEC1C00357FA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				48A44E581B9EEE6400357FA6 /* sparkle.pem */,
 				48A44E311B9EEC1C00357FA6 /* Info.plist */,
-				48A44E351B9EEC1C00357FA6 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,7 +112,8 @@
 		48A44E431B9EEC1C00357FA6 /* AndTekBarTests */ = {
 			isa = PBXGroup;
 			children = (
-				48A44E461B9EEC1C00357FA6 /* AndTekBarTests.m */,
+				EE00001100000000000011AA /* AndTekServiceTests.swift */,
+				EE00001300000000000013AA /* AppStateTests.swift */,
 				48A44E441B9EEC1C00357FA6 /* Supporting Files */,
 			);
 			path = AndTekBarTests;
@@ -147,7 +137,6 @@
 				48A44E291B9EEC1C00357FA6 /* Sources */,
 				48A44E2A1B9EEC1C00357FA6 /* Frameworks */,
 				48A44E2B1B9EEC1C00357FA6 /* Resources */,
-				48A44E561B9EEDAC00357FA6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -219,8 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A44E511B9EECBF00357FA6 /* Images.xcassets in Resources */,
-				48A44E531B9EED3100357FA6 /* MainMenu.xib in Resources */,
-				48A44E591B9EEE6400357FA6 /* sparkle.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A44E361B9EEC1C00357FA6 /* main.m in Sources */,
-				DD96CA751C3BC571007993B2 /* Reachability.m in Sources */,
-				48A44E341B9EEC1C00357FA6 /* AppDelegate.m in Sources */,
+				EE00000200000000000002AA /* AndTekBarApp.swift in Sources */,
+				EE00000400000000000004AA /* AppDelegate.swift in Sources */,
+				EE00000600000000000006AA /* AppState.swift in Sources */,
+				EE00000800000000000008AA /* AndTekService.swift in Sources */,
+				EE00000A0000000000000AAA /* NetworkMonitor.swift in Sources */,
+				EE00000C0000000000000CAA /* MenuBarView.swift in Sources */,
+				EE00000E0000000000000EAA /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A44E471B9EEC1C00357FA6 /* AndTekBarTests.m in Sources */,
+				EE00001200000000000012AA /* AndTekServiceTests.swift in Sources */,
+				EE00001400000000000014AA /* AppStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +292,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SWIFT_VERSION = 5.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -337,7 +330,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SWIFT_VERSION = 5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -347,17 +341,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = AndTekBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mn.frd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -365,17 +354,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = AndTekBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mn.frd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
