@@ -64,12 +64,17 @@ struct SettingsView: View {
                 }
                 .keyboardShortcut(.return, modifiers: [])
                 .buttonStyle(.borderedProminent)
+                .disabled(!hasChanges)
             }
             .padding(.horizontal, 24)
             .padding(.top, 12)
             .padding(.bottom, 24)
             .background(Color(nsColor: .controlBackgroundColor))
         }
+    }
+
+    private var hasChanges: Bool {
+        mac != savedMac || server != savedServer || port != savedPort || api != savedApi
     }
 
     private func loadDraft() {
