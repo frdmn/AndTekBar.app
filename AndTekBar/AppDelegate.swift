@@ -6,6 +6,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         Task { await appState.checkServer() }
         registerSystemEventObservers()
+        registerWindowObservers()
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
@@ -41,5 +42,26 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func handleLogout(_ notification: Notification) {
         Task { await appState.logout() }
+    }
+
+    private func registerWindowObservers() {
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.didBecomeKeyNotification, object: nil, queue: .main
+        ) { notification in
+            guard let window = notification.object as? NSWindow,
+                  window.styleMask.contains(.titled) else { return }
+            NSApp.setActivationPolicy(.regular)
+        }
+
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.willCloseNotification, object: nil, queue: .main
+        ) { notification in
+            DispatchQueue.main.async {
+                let hasTitledWindow = NSApp.windows.contains { $0.isVisible && $0.styleMask.contains(.titled) }
+                if !hasTitledWindow {
+                    NSApp.setActivationPolicy(.accessory)
+                }
+            }
+        }
     }
 }

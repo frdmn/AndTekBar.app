@@ -21,8 +21,13 @@ struct MenuBarView: View {
             OpenSettingsButton()
         } else {
             Button("Settings...") {
-                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                NSApp.setActivationPolicy(.regular)
                 NSApp.activate(ignoringOtherApps: true)
+                if let window = NSApp.windows.first(where: { $0.styleMask.contains(.titled) }) {
+                    window.makeKeyAndOrderFront(nil)
+                } else {
+                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                }
             }
             .keyboardShortcut(",", modifiers: .command)
         }
@@ -42,8 +47,13 @@ private struct OpenSettingsButton: View {
 
     var body: some View {
         Button("Settings...") {
-            openSettings()
+            NSApp.setActivationPolicy(.regular)
             NSApp.activate(ignoringOtherApps: true)
+            if let window = NSApp.windows.first(where: { $0.styleMask.contains(.titled) }) {
+                window.makeKeyAndOrderFront(nil)
+            } else {
+                openSettings()
+            }
         }
         .keyboardShortcut(",", modifiers: .command)
     }
