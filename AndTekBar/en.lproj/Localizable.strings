@@ -1,0 +1,17 @@
+/* MenuBarView */
+"Login" = "Login";
+"Logout" = "Logout";
+"Server unreachable" = "Server unreachable";
+"Reconnect" = "Reconnect";
+"Settings..." = "Settings...";
+"Quit AndTekBar" = "Quit AndTekBar";
+
+/* SettingsView */
+"Device" = "Device";
+"MAC Address" = "MAC Address";
+"Server" = "Server";
+"Host" = "Host";
+"Port" = "Port";
+"API Path" = "API Path";
+"Cancel" = "Cancel";
+"Save" = "Save";
