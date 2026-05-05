@@ -31,9 +31,12 @@ struct SettingsView: View {
             VStack(spacing: 0) {
                 Divider()
                 HStack {
-                    Text(versionString)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    HStack(spacing: 3) {
+                        Text(versionString)
+                            .foregroundStyle(.secondary)
+                        Link("@frdmn", destination: URL(string: "https://github.com/frdmn")!)
+                    }
+                    .font(.caption)
                     Spacer()
                     Button("Cancel") { dismiss() }
                         .keyboardShortcut(.escape, modifiers: [])
@@ -63,6 +66,6 @@ struct SettingsView: View {
 
     private var versionString: String {
         let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
-        return "v\(v) · © 2015–2026 by @frdmn"
+        return "v\(v) · © 2015–2026 by"
     }
 }
