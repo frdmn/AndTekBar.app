@@ -3,11 +3,12 @@
 "Logout" = "Abmelden";
 "Server unreachable" = "Server nicht erreichbar";
 "Reconnect" = "Erneut verbinden";
-"Settings..." = "Einstellungen…";
+"Settings..." = "Einstellungen...";
 "Quit AndTekBar" = "AndTekBar beenden";
 
 /* SettingsView */
 "Device" = "Gerät";
+"Connection" = "Verbindung";
 "MAC Address" = "MAC-Adresse";
 "Server" = "Server";
 "Host" = "Host";

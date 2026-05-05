@@ -8,6 +8,7 @@
 
 /* SettingsView */
 "Device" = "Device";
+"Connection" = "Connection";
 "MAC Address" = "MAC Address";
 "Server" = "Server";
 "Host" = "Host";
