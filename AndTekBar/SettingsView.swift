@@ -43,12 +43,9 @@ struct SettingsView: View {
         VStack(spacing: 0) {
             Divider()
             HStack(spacing: 12) {
-                HStack(spacing: 3) {
-                    Text(versionString)
-                        .foregroundStyle(.secondary)
-                    Link("@frdmn", destination: URL(string: "https://github.com/frdmn")!)
-                }
-                .font(.caption)
+                Link(versionString, destination: URL(string: "https://github.com/frdmn/AndTekBar.app")!)
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
 
                 Spacer()
 
@@ -93,7 +90,7 @@ struct SettingsView: View {
 
     private var versionString: String {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
-        return "v\(version) · © 2015-2026 by"
+        return "v\(version)"
     }
 }
 
