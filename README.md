@@ -1,6 +1,8 @@
 # AndTekBar.app
 
-![menubar](http://up.frd.mn/q56wA.png) ![settings](http://up.frd.mn/C0sMr.png)
+| | |
+|---|---|
+| ![menubar](https://up.frd.mn/L67FgmZmBmgAJSHBr2ZsmycdN/Bildschirmfoto-2026-05-06-um-10.40.37.png) | ![settings](https://up.frd.mn/xS5szGYNi5dsqDMPkoWUY9iaw/Bildschirmfoto-2026-05-06-um-10.42.11.png) |
 
 Tiny menubar App for macOS to control your AndTek call center.
 
@@ -22,6 +24,19 @@ Here's a short explanation how to contribute to `AndTekBar.app`:
   `xcodebuild`
 4. Open the executable which can be found in:
   `${GITDIR}/build/Release/AndTekBar.app`
+
+## MDM / Pre-deployment Configuration
+
+Settings can be pre-seeded via `defaults write` before the app is installed or launched for the first time. MDM can run these as a script during enrollment:
+
+```bash
+defaults write mn.frd.AndTekBar server "192.168.1.100"
+defaults write mn.frd.AndTekBar port "8080"
+defaults write mn.frd.AndTekBar api "andphone/ACDService"
+defaults write mn.frd.AndTekBar mac "002414B2XXXX"
+```
+
+This creates `~/Library/Preferences/mn.frd.AndTekBar.plist` and the app picks up those values on first launch. Users can still change them later via the Settings UI.
 
 ## Contributing
 
