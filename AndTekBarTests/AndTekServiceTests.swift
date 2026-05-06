@@ -52,6 +52,21 @@ final class AndTekServiceTests: XCTestCase {
         session = nil
     }
 
+    private func makeService() -> AndTekService {
+        AndTekService(
+            server: "192.168.1.1", port: "8080",
+            api: "andphone/ACDService", mac: "AABBCC112233",
+            session: session
+        )
+    }
+
+    private func respondOK() {
+        MockURLProtocol.requestHandler = { request in
+            let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            return (response, Data())
+        }
+    }
+
     func testLoginPostsToCorrectURL() async throws {
         var capturedRequest: URLRequest?
         MockURLProtocol.requestHandler = { request in
@@ -59,12 +74,7 @@ final class AndTekServiceTests: XCTestCase {
             let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
             return (response, Data())
         }
-        let service = AndTekService(
-            server: "192.168.1.1", port: "8080",
-            api: "andphone/ACDService", mac: "AABBCC112233",
-            session: session
-        )
-        try await service.setState(.login)
+        try await makeService().send(.login)
         XCTAssertEqual(capturedRequest?.url?.absoluteString, "http://192.168.1.1:8080/andphone/ACDService")
         XCTAssertEqual(capturedRequest?.httpMethod, "POST")
     }
@@ -76,12 +86,7 @@ final class AndTekServiceTests: XCTestCase {
             let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
             return (response, Data())
         }
-        let service = AndTekService(
-            server: "192.168.1.1", port: "8080",
-            api: "andphone/ACDService", mac: "AABBCC112233",
-            session: session
-        )
-        try await service.setState(.login)
+        try await makeService().send(.login)
         XCTAssertTrue(capturedBody?.contains("state=0") == true, "body: \(capturedBody ?? "nil")")
         XCTAssertTrue(capturedBody?.contains("dev=SEPAABBCC112233") == true, "body: \(capturedBody ?? "nil")")
     }
@@ -93,12 +98,7 @@ final class AndTekServiceTests: XCTestCase {
             let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
             return (response, Data())
         }
-        let service = AndTekService(
-            server: "192.168.1.1", port: "8080",
-            api: "andphone/ACDService", mac: "AABBCC112233",
-            session: session
-        )
-        try await service.setState(.logout)
+        try await makeService().send(.logout)
         XCTAssertTrue(capturedBody?.contains("state=1") == true, "body: \(capturedBody ?? "nil")")
     }
 
@@ -107,13 +107,8 @@ final class AndTekServiceTests: XCTestCase {
             let response = HTTPURLResponse(url: request.url!, statusCode: 500, httpVersion: nil, headerFields: nil)!
             return (response, Data())
         }
-        let service = AndTekService(
-            server: "192.168.1.1", port: "8080",
-            api: "andphone/ACDService", mac: "AABBCC112233",
-            session: session
-        )
         do {
-            try await service.setState(.login)
+            try await makeService().send(.login)
             XCTFail("Expected error, got none")
         } catch {}
     }

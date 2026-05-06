@@ -2,11 +2,12 @@ import AppKit
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let appState = AppState.shared
+    private var observers: [NSObjectProtocol] = []
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         Task { await appState.checkServer() }
-        registerSystemEventObservers()
-        registerWindowObservers()
+        observeSession()
+        observeWindows()
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
@@ -18,50 +19,43 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return .terminateLater
     }
 
-    private func registerSystemEventObservers() {
-        NSWorkspace.shared.notificationCenter.addObserver(
-            self, selector: #selector(handleLogin),
-            name: NSWorkspace.sessionDidBecomeActiveNotification, object: nil)
+    private func observeSession() {
+        let workspace  = NSWorkspace.shared.notificationCenter
+        let distributed = DistributedNotificationCenter.default()
 
-        NSWorkspace.shared.notificationCenter.addObserver(
-            self, selector: #selector(handleLogout),
-            name: NSWorkspace.sessionDidResignActiveNotification, object: nil)
+        let onLogin:  (Notification) -> Void = { [appState] _ in Task { await appState.login() } }
+        let onLogout: (Notification) -> Void = { [appState] _ in Task { await appState.logout() } }
 
-        DistributedNotificationCenter.default().addObserver(
-            self, selector: #selector(handleLogout),
-            name: NSNotification.Name("com.apple.screenIsLocked"), object: nil)
-
-        DistributedNotificationCenter.default().addObserver(
-            self, selector: #selector(handleLogin),
-            name: NSNotification.Name("com.apple.screenIsUnlocked"), object: nil)
+        observers += [
+            workspace.addObserver(forName: NSWorkspace.sessionDidBecomeActiveNotification,
+                                  object: nil, queue: .main, using: onLogin),
+            workspace.addObserver(forName: NSWorkspace.sessionDidResignActiveNotification,
+                                  object: nil, queue: .main, using: onLogout),
+            distributed.addObserver(forName: .init("com.apple.screenIsUnlocked"),
+                                    object: nil, queue: .main, using: onLogin),
+            distributed.addObserver(forName: .init("com.apple.screenIsLocked"),
+                                    object: nil, queue: .main, using: onLogout),
+        ]
     }
 
-    @objc private func handleLogin(_ notification: Notification) {
-        Task { await appState.login() }
-    }
-
-    @objc private func handleLogout(_ notification: Notification) {
-        Task { await appState.logout() }
-    }
-
-    private func registerWindowObservers() {
-        NotificationCenter.default.addObserver(
-            forName: NSWindow.didBecomeKeyNotification, object: nil, queue: .main
-        ) { notification in
-            guard let window = notification.object as? NSWindow,
-                  window.styleMask.contains(.titled) else { return }
-            NSApp.setActivationPolicy(.regular)
-        }
-
-        NotificationCenter.default.addObserver(
-            forName: NSWindow.willCloseNotification, object: nil, queue: .main
-        ) { notification in
-            DispatchQueue.main.async {
-                let hasTitledWindow = NSApp.windows.contains { $0.isVisible && $0.styleMask.contains(.titled) }
-                if !hasTitledWindow {
-                    NSApp.setActivationPolicy(.accessory)
+    private func observeWindows() {
+        let center = NotificationCenter.default
+        observers += [
+            center.addObserver(forName: NSWindow.didBecomeKeyNotification,
+                               object: nil, queue: .main) { note in
+                guard let window = note.object as? NSWindow,
+                      window.styleMask.contains(.titled) else { return }
+                NSApp.setActivationPolicy(.regular)
+            },
+            center.addObserver(forName: NSWindow.willCloseNotification,
+                               object: nil, queue: .main) { _ in
+                DispatchQueue.main.async {
+                    let hasTitled = NSApp.windows.contains {
+                        $0.isVisible && $0.styleMask.contains(.titled)
+                    }
+                    if !hasTitled { NSApp.setActivationPolicy(.accessory) }
                 }
-            }
-        }
+            },
+        ]
     }
 }

@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("mac")    private var savedMac    = "002414B2XXXX"
-    @AppStorage("server") private var savedServer = "192.168.100.238"
-    @AppStorage("port")   private var savedPort   = "8080"
-    @AppStorage("api")    private var savedApi    = "andphone/ACDService"
+    @AppStorage(Defaults.Key.mac)    private var savedMac    = Defaults.mac
+    @AppStorage(Defaults.Key.server) private var savedServer = Defaults.server
+    @AppStorage(Defaults.Key.port)   private var savedPort   = Defaults.port
+    @AppStorage(Defaults.Key.api)    private var savedApi    = Defaults.api
 
     @State private var mac    = ""
     @State private var server = ""
@@ -92,8 +92,8 @@ struct SettingsView: View {
     }
 
     private var versionString: String {
-        let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
-        return "v\(v) · © 2015-2026 by"
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
+        return "v\(version) · © 2015-2026 by"
     }
 }
 

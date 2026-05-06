@@ -13,7 +13,6 @@
 		EE00000400000000000004AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000300000000000003AA /* AppDelegate.swift */; };
 		EE00000600000000000006AA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000500000000000005AA /* AppState.swift */; };
 		EE00000800000000000008AA /* AndTekService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000700000000000007AA /* AndTekService.swift */; };
-		EE00000A0000000000000AAA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000900000000000009AA /* NetworkMonitor.swift */; };
 		EE00000C0000000000000CAA /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000B0000000000000BAA /* MenuBarView.swift */; };
 		EE00000E0000000000000EAA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000D0000000000000DAA /* SettingsView.swift */; };
 		EE00001200000000000012AA /* AndTekServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00001100000000000011AA /* AndTekServiceTests.swift */; };
@@ -43,7 +42,6 @@
 		EE00000300000000000003AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE00000500000000000005AA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		EE00000700000000000007AA /* AndTekService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekService.swift; sourceTree = "<group>"; };
-		EE00000900000000000009AA /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		EE00000B0000000000000BAA /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		EE00000D0000000000000DAA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EE00001100000000000011AA /* AndTekServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekServiceTests.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				EE00000300000000000003AA /* AppDelegate.swift */,
 				EE00000500000000000005AA /* AppState.swift */,
 				EE00000700000000000007AA /* AndTekService.swift */,
-				EE00000900000000000009AA /* NetworkMonitor.swift */,
 				EE00000B0000000000000BAA /* MenuBarView.swift */,
 				EE00000D0000000000000DAA /* SettingsView.swift */,
 				EE00001500000000000015AA /* Localizable.strings */,
@@ -247,7 +244,6 @@
 				EE00000400000000000004AA /* AppDelegate.swift in Sources */,
 				EE00000600000000000006AA /* AppState.swift in Sources */,
 				EE00000800000000000008AA /* AndTekService.swift in Sources */,
-				EE00000A0000000000000AAA /* NetworkMonitor.swift in Sources */,
 				EE00000C0000000000000CAA /* MenuBarView.swift in Sources */,
 				EE00000E0000000000000EAA /* SettingsView.swift in Sources */,
 			);

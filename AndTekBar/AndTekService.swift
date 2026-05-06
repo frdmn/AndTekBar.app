@@ -1,52 +1,49 @@
 import Foundation
 
-enum AndTekState {
-    case login, logout
-
-    var rawValue: String {
-        switch self {
-        case .login:  return "0"
-        case .logout: return "1"
-        }
-    }
-}
-
 struct AndTekService {
+    enum Action: String {
+        case login = "0"
+        case logout = "1"
+    }
+
     let server: String
     let port: String
     let api: String
     let mac: String
     var session: URLSession = .shared
 
-    private func makeBaseURL() throws -> URL {
-        guard let url = URL(string: "http://\(server):\(port)/\(api)") else {
-            throw URLError(.badURL)
+    private var baseURL: URL {
+        get throws {
+            guard let url = URL(string: "http://\(server):\(port)/\(api)") else {
+                throw URLError(.badURL)
+            }
+            return url
         }
-        return url
     }
 
-    func setState(_ state: AndTekState) async throws {
+    func send(_ action: Action) async throws {
         var components = URLComponents()
         components.queryItems = [
-            URLQueryItem(name: "queue",  value: "all"),
-            URLQueryItem(name: "setsec", value: "-1"),
-            URLQueryItem(name: "page",   value: "available"),
-            URLQueryItem(name: "state",  value: state.rawValue),
-            URLQueryItem(name: "dev",    value: "SEP\(mac)"),
+            .init(name: "queue",  value: "all"),
+            .init(name: "setsec", value: "-1"),
+            .init(name: "page",   value: "available"),
+            .init(name: "state",  value: action.rawValue),
+            .init(name: "dev",    value: "SEP\(mac)"),
         ]
-        var request = URLRequest(url: try makeBaseURL())
+        var request = URLRequest(url: try baseURL)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = components.percentEncodedQuery?.data(using: .utf8)
-        let (_, response) = try await session.data(for: request)
-        guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
-            throw URLError(.badServerResponse)
-        }
+        try await expectOK(request)
     }
 
-    func checkReachability() async throws {
-        var request = URLRequest(url: try makeBaseURL(), timeoutInterval: 5)
+    func ping() async throws {
+        var request = URLRequest(url: try baseURL, timeoutInterval: 5)
         request.httpMethod = "GET"
+        try await expectOK(request)
+    }
+
+    private func expectOK(_ request: URLRequest) async throws {
         let (_, response) = try await session.data(for: request)
         guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
             throw URLError(.badServerResponse)

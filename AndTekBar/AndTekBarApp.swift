@@ -25,14 +25,13 @@ struct AndTekBarApp: App {
 }
 
 private extension ConnectionState {
+    static let iconScale: CGFloat = 1.1
+
     var iconOpacity: CGFloat {
-        switch self {
-        case .online:            return 1.0
-        case .offline, .failure: return 0.5
-        }
+        self == .online ? 1.0 : 0.5
     }
 
-    var baseNSImage: NSImage {
+    var baseImage: NSImage {
         switch self {
         case .online:
             return NSImage(systemSymbolName: "phone.circle.fill", accessibilityDescription: nil) ?? NSImage()
@@ -43,20 +42,19 @@ private extension ConnectionState {
         }
     }
 
-    var iconScale: CGFloat { 1.1 }
-
     var menuBarImage: NSImage {
-        let base = baseNSImage
+        let base = baseImage
         guard base.size.width > 0, base.size.height > 0 else {
             base.isTemplate = true
             return base
         }
-        let scaledSize = NSSize(
-            width: base.size.width * iconScale,
-            height: base.size.height * iconScale
+        let scaled = NSSize(
+            width:  base.size.width  * Self.iconScale,
+            height: base.size.height * Self.iconScale
         )
-        let rendered = NSImage(size: scaledSize, flipped: false) { rect in
-            base.draw(in: rect, from: .zero, operation: .sourceOver, fraction: self.iconOpacity)
+        let opacity = iconOpacity
+        let rendered = NSImage(size: scaled, flipped: false) { rect in
+            base.draw(in: rect, from: .zero, operation: .sourceOver, fraction: opacity)
             return true
         }
         rendered.isTemplate = true

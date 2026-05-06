@@ -17,44 +17,48 @@ struct MenuBarView: View {
 
         Divider()
 
+        SettingsMenuButton()
+
+        Divider()
+
+        Button("Quit AndTekBar") { NSApplication.shared.terminate(nil) }
+            .keyboardShortcut("q", modifiers: .command)
+    }
+}
+
+private struct SettingsMenuButton: View {
+    var body: some View {
         if #available(macOS 14, *) {
-            OpenSettingsButton()
+            ModernSettingsButton()
         } else {
             Button("Settings...") {
-                NSApp.setActivationPolicy(.regular)
-                NSApp.activate(ignoringOtherApps: true)
-                if let window = NSApp.windows.first(where: { $0.styleMask.contains(.titled) }) {
-                    window.makeKeyAndOrderFront(nil)
-                } else {
+                activateAndShow {
                     NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 }
             }
             .keyboardShortcut(",", modifiers: .command)
         }
-
-        Divider()
-
-        Button("Quit AndTekBar") {
-            NSApplication.shared.terminate(nil)
-        }
-        .keyboardShortcut("q", modifiers: .command)
     }
 }
 
 @available(macOS 14, *)
-private struct OpenSettingsButton: View {
+private struct ModernSettingsButton: View {
     @Environment(\.openSettings) private var openSettings
 
     var body: some View {
         Button("Settings...") {
-            NSApp.setActivationPolicy(.regular)
-            NSApp.activate(ignoringOtherApps: true)
-            if let window = NSApp.windows.first(where: { $0.styleMask.contains(.titled) }) {
-                window.makeKeyAndOrderFront(nil)
-            } else {
-                openSettings()
-            }
+            activateAndShow { openSettings() }
         }
         .keyboardShortcut(",", modifiers: .command)
+    }
+}
+
+private func activateAndShow(orFallback fallback: () -> Void) {
+    NSApp.setActivationPolicy(.regular)
+    NSApp.activate(ignoringOtherApps: true)
+    if let window = NSApp.windows.first(where: { $0.styleMask.contains(.titled) }) {
+        window.makeKeyAndOrderFront(nil)
+    } else {
+        fallback()
     }
 }
