@@ -1,6 +1,6 @@
 /* MenuBarView */
-"Login" = "Anmelden";
-"Logout" = "Abmelden";
+"Login" = "Login";
+"Logout" = "Logout";
 "Server unreachable" = "Server nicht erreichbar";
 "Reconnect" = "Erneut verbinden";
 "Settings..." = "Einstellungen...";
