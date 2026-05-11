@@ -17,7 +17,7 @@ struct SettingsView: View {
                 }
 
                 SettingsSection(title: "Connection", systemImage: "server.rack") {
-                    SettingsField(title: "Endpoint URL", text: $endpoint)
+                    SettingsField(title: "AndTek Endpoint", text: $endpoint)
                 }
             }
             .padding(.horizontal, 28)

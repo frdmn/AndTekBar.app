@@ -10,9 +10,6 @@
 "Device" = "Gerät";
 "Connection" = "Verbindung";
 "MAC Address" = "MAC-Adresse";
-"Server" = "Server";
-"Host" = "Host";
-"Port" = "Port";
-"API Path" = "API-Pfad";
+"AndTek Endpoint" = "AndTek Endpunkt";
 "Cancel" = "Abbrechen";
 "Save" = "Sichern";
