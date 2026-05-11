@@ -13,11 +13,21 @@ struct SettingsView: View {
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 20) {
                 SettingsSection(title: "Device", systemImage: "desktopcomputer") {
-                    SettingsField(title: "MAC Address", text: $mac)
+                    SettingsField(
+                        title: "MAC Address",
+                        text: $mac,
+                        isValid: isMacValid,
+                        errorMessage: "Must be 12 hexadecimal characters (e.g. 002414B2AABB)"
+                    )
                 }
 
                 SettingsSection(title: "Connection", systemImage: "server.rack") {
-                    SettingsField(title: "AndTek Endpoint", text: $endpoint)
+                    SettingsField(
+                        title: "AndTek Endpoint",
+                        text: $endpoint,
+                        isValid: isEndpointValid,
+                        errorMessage: "Must be a valid http:// or https:// URL"
+                    )
                 }
             }
             .padding(.horizontal, 28)
@@ -28,7 +38,7 @@ struct SettingsView: View {
 
             footer
         }
-        .frame(width: 520, height: 320)
+        .frame(width: 520, height: 380)
         .background(Color(nsColor: .windowBackgroundColor))
         .onAppear(perform: loadDraft)
     }
@@ -64,8 +74,18 @@ struct SettingsView: View {
         }
     }
 
+    private var isEndpointValid: Bool {
+        guard let url = URL(string: endpoint), let scheme = url.scheme, url.host != nil else { return false }
+        return scheme == "http" || scheme == "https"
+    }
+
+    private var isMacValid: Bool {
+        let hex = CharacterSet(charactersIn: "0123456789ABCDEFabcdef")
+        return mac.count == 12 && mac.unicodeScalars.allSatisfy { hex.contains($0) }
+    }
+
     private var hasChanges: Bool {
-        mac != savedMac || endpoint != savedEndpoint
+        (mac != savedMac || endpoint != savedEndpoint) && isEndpointValid && isMacValid
     }
 
     private func loadDraft() {
@@ -114,6 +134,8 @@ private struct SettingsSection<Content: View>: View {
 private struct SettingsField: View {
     let title: LocalizedStringKey
     @Binding var text: String
+    var isValid: Bool = true
+    var errorMessage: String? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -133,8 +155,16 @@ private struct SettingsField: View {
                 }
                 .overlay {
                     RoundedRectangle(cornerRadius: 7, style: .continuous)
-                        .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                        .stroke(isValid ? Color.primary.opacity(0.1) : Color.red.opacity(0.6), lineWidth: isValid ? 1 : 1.5)
                 }
+
+            if !isValid, let message = errorMessage {
+                Label(message, systemImage: "exclamationmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(.red.opacity(0.85))
+                    .transition(.opacity.combined(with: .move(edge: .top)))
+            }
         }
+        .animation(.easeInOut(duration: 0.2), value: isValid)
     }
 }
