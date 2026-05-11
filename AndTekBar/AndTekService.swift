@@ -6,15 +6,13 @@ struct AndTekService {
         case logout = "1"
     }
 
-    let server: String
-    let port: String
-    let api: String
+    let endpoint: String
     let mac: String
     var session: URLSession = .shared
 
     private var baseURL: URL {
         get throws {
-            guard let url = URL(string: "http://\(server):\(port)/\(api)") else {
+            guard let url = URL(string: endpoint) else {
                 throw URLError(.badURL)
             }
             return url

@@ -6,16 +6,12 @@ enum ConnectionState: Equatable {
 }
 
 enum Defaults {
-    static let server = "192.168.100.238"
-    static let port   = "8080"
-    static let api    = "andphone/ACDService"
-    static let mac    = "002414B2XXXX"
+    static let endpoint = "http://192.168.100.238:8080/andphone/ACDService"
+    static let mac      = "002414B2XXXX"
 
     enum Key {
-        static let server = "server"
-        static let port   = "port"
-        static let api    = "api"
-        static let mac    = "mac"
+        static let endpoint = "endpoint"
+        static let mac      = "mac"
     }
 }
 
@@ -28,11 +24,25 @@ final class AppState: ObservableObject {
     private let monitorQueue = DispatchQueue(label: "mn.frd.AndTekBar.NetworkMonitor")
 
     private init() {
+        Self.migrateIfNeeded()
         pathMonitor.pathUpdateHandler = { [weak self] path in
             guard path.status != .satisfied else { return }
             Task { @MainActor in self?.connectionState = .failure }
         }
         pathMonitor.start(queue: monitorQueue)
+    }
+
+    private static func migrateIfNeeded() {
+        let defaults = UserDefaults.standard
+        guard defaults.string(forKey: Defaults.Key.endpoint) == nil,
+              let server = defaults.string(forKey: "server"),
+              let port   = defaults.string(forKey: "port"),
+              let api    = defaults.string(forKey: "api")
+        else { return }
+        defaults.set("http://\(server):\(port)/\(api)", forKey: Defaults.Key.endpoint)
+        defaults.removeObject(forKey: "server")
+        defaults.removeObject(forKey: "port")
+        defaults.removeObject(forKey: "api")
     }
 
     @MainActor
@@ -68,10 +78,8 @@ final class AppState: ObservableObject {
     private var service: AndTekService {
         let defaults = UserDefaults.standard
         return AndTekService(
-            server: defaults.string(forKey: Defaults.Key.server) ?? Defaults.server,
-            port:   defaults.string(forKey: Defaults.Key.port)   ?? Defaults.port,
-            api:    defaults.string(forKey: Defaults.Key.api)    ?? Defaults.api,
-            mac:    defaults.string(forKey: Defaults.Key.mac)    ?? Defaults.mac
+            endpoint: defaults.string(forKey: Defaults.Key.endpoint) ?? Defaults.endpoint,
+            mac:      defaults.string(forKey: Defaults.Key.mac)      ?? Defaults.mac
         )
     }
 }

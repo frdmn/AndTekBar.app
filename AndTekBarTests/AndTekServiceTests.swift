@@ -54,8 +54,8 @@ final class AndTekServiceTests: XCTestCase {
 
     private func makeService() -> AndTekService {
         AndTekService(
-            server: "192.168.1.1", port: "8080",
-            api: "andphone/ACDService", mac: "AABBCC112233",
+            endpoint: "http://192.168.1.1:8080/andphone/ACDService",
+            mac: "AABBCC112233",
             session: session
         )
     }

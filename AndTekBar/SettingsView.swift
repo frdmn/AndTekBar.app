@@ -1,15 +1,11 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage(Defaults.Key.mac)    private var savedMac    = Defaults.mac
-    @AppStorage(Defaults.Key.server) private var savedServer = Defaults.server
-    @AppStorage(Defaults.Key.port)   private var savedPort   = Defaults.port
-    @AppStorage(Defaults.Key.api)    private var savedApi    = Defaults.api
+    @AppStorage(Defaults.Key.mac)      private var savedMac      = Defaults.mac
+    @AppStorage(Defaults.Key.endpoint) private var savedEndpoint = Defaults.endpoint
 
-    @State private var mac    = ""
-    @State private var server = ""
-    @State private var port   = ""
-    @State private var api    = ""
+    @State private var mac      = ""
+    @State private var endpoint = ""
 
     @Environment(\.dismiss) private var dismiss
 
@@ -21,9 +17,7 @@ struct SettingsView: View {
                 }
 
                 SettingsSection(title: "Connection", systemImage: "server.rack") {
-                    SettingsField(title: "Host", text: $server)
-                    SettingsField(title: "Port", text: $port)
-                    SettingsField(title: "API Path", text: $api)
+                    SettingsField(title: "Endpoint URL", text: $endpoint)
                 }
             }
             .padding(.horizontal, 28)
@@ -34,7 +28,7 @@ struct SettingsView: View {
 
             footer
         }
-        .frame(width: 520, height: 450)
+        .frame(width: 520, height: 320)
         .background(Color(nsColor: .windowBackgroundColor))
         .onAppear(perform: loadDraft)
     }
@@ -71,21 +65,17 @@ struct SettingsView: View {
     }
 
     private var hasChanges: Bool {
-        mac != savedMac || server != savedServer || port != savedPort || api != savedApi
+        mac != savedMac || endpoint != savedEndpoint
     }
 
     private func loadDraft() {
-        mac    = savedMac
-        server = savedServer
-        port   = savedPort
-        api    = savedApi
+        mac      = savedMac
+        endpoint = savedEndpoint
     }
 
     private func save() {
-        savedMac    = mac
-        savedServer = server
-        savedPort   = port
-        savedApi    = api
+        savedMac      = mac
+        savedEndpoint = endpoint
     }
 
     private var versionString: String {
