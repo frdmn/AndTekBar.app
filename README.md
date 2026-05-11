@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| ![menubar](https://up.frd.mn/L67FgmZmBmgAJSHBr2ZsmycdN/Bildschirmfoto-2026-05-06-um-10.40.37.png) | ![settings](https://up.frd.mn/xS5szGYNi5dsqDMPkoWUY9iaw/Bildschirmfoto-2026-05-06-um-10.42.11.png) |
+| ![menubar](https://up.frd.mn/L67FgmZmBmgAJSHBr2ZsmycdN/Bildschirmfoto-2026-05-06-um-10.40.37.png) | ![settings](https://up.frd.mn/mJyFvqUltc7b9kLOvCENVxQFL/Bildschirmfoto-2026-05-11-um-11.26.14.png) |
 
 Tiny menubar App for macOS to control your AndTek call center.
 
@@ -30,9 +30,7 @@ Here's a short explanation how to contribute to `AndTekBar.app`:
 Settings can be pre-seeded via `defaults write` before the app is installed or launched for the first time. MDM can run these as a script during enrollment:
 
 ```bash
-defaults write mn.frd.AndTekBar server "192.168.1.100"
-defaults write mn.frd.AndTekBar port "8080"
-defaults write mn.frd.AndTekBar api "andphone/ACDService"
+defaults write mn.frd.AndTekBar endpoint "http://192.168.1.1:8080/andphone/ACDService"
 defaults write mn.frd.AndTekBar mac "002414B2XXXX"
 ```
 
