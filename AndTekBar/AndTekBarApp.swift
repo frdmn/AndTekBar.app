@@ -25,18 +25,19 @@ struct AndTekBarApp: App {
 }
 
 private extension ConnectionState {
-    static let iconScale: CGFloat = 1.1
-
     var iconOpacity: CGFloat {
         self == .online ? 1.0 : 0.5
     }
 
     var baseImage: NSImage {
+        let config = NSImage.SymbolConfiguration(scale: .medium)
         switch self {
         case .online:
-            return NSImage(systemSymbolName: "phone.circle.fill", accessibilityDescription: nil) ?? NSImage()
+            return NSImage(systemSymbolName: "phone.circle.fill", accessibilityDescription: nil)?
+                .withSymbolConfiguration(config) ?? NSImage()
         case .offline:
-            return NSImage(systemSymbolName: "phone.circle", accessibilityDescription: nil) ?? NSImage()
+            return NSImage(systemSymbolName: "phone.circle", accessibilityDescription: nil)?
+                .withSymbolConfiguration(config) ?? NSImage()
         case .failure:
             return NSImage(named: "custom.phone.circle.trianglebadge.exclamationmark") ?? NSImage()
         }
@@ -48,10 +49,7 @@ private extension ConnectionState {
             base.isTemplate = true
             return base
         }
-        let scaled = NSSize(
-            width:  base.size.width  * Self.iconScale,
-            height: base.size.height * Self.iconScale
-        )
+        let scaled = NSSize(width: base.size.width * 1.1, height: base.size.height * 1.1)
         let opacity = iconOpacity
         let rendered = NSImage(size: scaled, flipped: false) { rect in
             base.draw(in: rect, from: .zero, operation: .sourceOver, fraction: opacity)
