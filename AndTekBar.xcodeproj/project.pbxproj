@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48A44E511B9EECBF00357FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A44E501B9EECBF00357FA6 /* Images.xcassets */; };
 		EE00001800000000000018AA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE00001500000000000015AA /* Localizable.strings */; };
+		EE00001A0000000000001AAA /* GitVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00001B0000000000001BAA /* GitVersion.swift */; };
 		EE00000200000000000002AA /* AndTekBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000100000000000001AA /* AndTekBarApp.swift */; };
 		EE00000400000000000004AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000300000000000003AA /* AppDelegate.swift */; };
 		EE00000600000000000006AA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00000500000000000005AA /* AppState.swift */; };
@@ -44,6 +45,7 @@
 		EE00000700000000000007AA /* AndTekService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekService.swift; sourceTree = "<group>"; };
 		EE00000B0000000000000BAA /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		EE00000D0000000000000DAA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE00001B0000000000001BAA /* GitVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitVersion.swift; sourceTree = "<group>"; };
 		EE00001100000000000011AA /* AndTekServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndTekServiceTests.swift; sourceTree = "<group>"; };
 		EE00001300000000000013AA /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		EE00001600000000000016AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				EE00000700000000000007AA /* AndTekService.swift */,
 				EE00000B0000000000000BAA /* MenuBarView.swift */,
 				EE00000D0000000000000DAA /* SettingsView.swift */,
+				EE00001B0000000000001BAA /* GitVersion.swift */,
 				EE00001500000000000015AA /* Localizable.strings */,
 				48A44E501B9EECBF00357FA6 /* Images.xcassets */,
 				48A44E301B9EEC1C00357FA6 /* Supporting Files */,
@@ -147,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48A44E4A1B9EEC1C00357FA6 /* Build configuration list for PBXNativeTarget "AndTekBar" */;
 			buildPhases = (
+				EE00001900000000000019AA /* Inject Git Commit */,
 				48A44E291B9EEC1C00357FA6 /* Sources */,
 				48A44E2A1B9EEC1C00357FA6 /* Frameworks */,
 				48A44E2B1B9EEC1C00357FA6 /* Resources */,
@@ -246,6 +250,7 @@
 				EE00000800000000000008AA /* AndTekService.swift in Sources */,
 				EE00000C0000000000000CAA /* MenuBarView.swift in Sources */,
 				EE00000E0000000000000EAA /* SettingsView.swift in Sources */,
+				EE00001A0000000000001AAA /* GitVersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +264,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE00001900000000000019AA /* Generate GitVersion.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate GitVersion.swift";
+			outputPaths = (
+				"$(SRCROOT)/AndTekBar/GitVersion.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT_COMMIT=$(git -C \"$SRCROOT\" rev-parse --short HEAD 2>/dev/null || echo unknown)\ncat > \"$SRCROOT/AndTekBar/GitVersion.swift\" <<EOF\nenum GitVersion {\n    static let commit = \"$GIT_COMMIT\"\n}\nEOF\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		48A44E421B9EEC1C00357FA6 /* PBXTargetDependency */ = {

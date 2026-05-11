@@ -90,7 +90,7 @@ struct SettingsView: View {
 
     private var versionString: String {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
-        return "v\(version)"
+        return "v\(version) (\(GitVersion.commit))"
     }
 }
 
