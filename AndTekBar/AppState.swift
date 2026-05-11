@@ -36,13 +36,15 @@ final class AppState: ObservableObject {
         let defaults = UserDefaults.standard
         guard defaults.string(forKey: Defaults.Key.endpoint) == nil,
               let server = defaults.string(forKey: "server"),
-              let port   = defaults.string(forKey: "port"),
+              let portObj = defaults.object(forKey: "port"),
               let api    = defaults.string(forKey: "api")
         else { return }
+        let port = (portObj as? String) ?? "\(portObj)"
         defaults.set("http://\(server):\(port)/\(api)", forKey: Defaults.Key.endpoint)
         defaults.removeObject(forKey: "server")
         defaults.removeObject(forKey: "port")
         defaults.removeObject(forKey: "api")
+        defaults.synchronize()
     }
 
     @MainActor
