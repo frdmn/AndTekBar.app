@@ -13,3 +13,5 @@
 "AndTek Endpoint" = "AndTek Endpunkt";
 "Cancel" = "Abbrechen";
 "Save" = "Sichern";
+"Must be 12 hexadecimal characters (e.g. 002414B2AABB)" = "Muss 12 hexadezimale Zeichen enthalten (z.B. 002414B2AABB)";
+"Must be a valid http:// or https:// URL" = "Muss eine gültige http:// oder https:// URL sein";

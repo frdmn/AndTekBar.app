@@ -135,7 +135,7 @@ private struct SettingsField: View {
     let title: LocalizedStringKey
     @Binding var text: String
     var isValid: Bool = true
-    var errorMessage: String? = nil
+    var errorMessage: LocalizedStringKey? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
